@@ -1,10 +1,10 @@
 body {
 	text-align:	center
 	;margin: auto
-	;background-color: #999999
+	;background-color: HoneyDew ;
 	;width: 1000px;
 	;height: 650px
-	;font-family: 'Comic Sans MS'
+	;font-family: 'Courier New'
 	;font-size: 0.8em;
 }
 
@@ -18,12 +18,12 @@ bodyLong {
 	;font-size: 0.8em;
 }
 
-input {font-family: 'Comic Sans MS'; width: 250px}
-select {font-family: 'Comic Sans MS'; width: 256px}
-.inputWide {font-family: 'Comic Sans MS'; width: 700px}
+input {font-family: 'Courier New'; width: 250px}
+select {font-family: 'Courier New'; width: 256px}
+.inputWide {font-family: 'Courier New'; width: 700px}
 
-a:link { text-decoration:none; font-weight:bold; color:blue}
-a:visited { text-decoration:none; font-weight:bold; color:blue}
+a:link { text-decoration:none; color:blue}
+a:visited { text-decoration:none; color:blue}
 
 /*
 .linkHomeT {filter:DropShadow(Color=black, OffX=1, OffY=1);text-shadow:black 1px 1px;opacity:0.30;filter:alpha(opacity=30);position:relative; top:42px; left:-215px; font-size: 1em; text-shadow:#505050 1px 1px;}
@@ -32,39 +32,39 @@ a:visited { text-decoration:none; font-weight:bold; color:blue}
 .linkHomeT a:hover	{color:black}
 */
 
-.linkHome {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top:42px; left:-215px; font-size: 1em; text-shadow:#505050 1px 1px;}
-.linkHome a:link 	{color:#606060}
-.linkHome a:visited {color:#606060}
+.linkHome {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top:-50px; left:-110px; font-size: 0.6em; text-shadow:#505050 1px 1px;}
+.linkHome a:link 	{color:red}
+.linkHome a:visited {color:red}
 .linkHome a:hover	{color:black}
 
-.linkProgram {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -45px; left:-10px; font-size: 1em; text-shadow:#505050 1px 1px;}
-.linkProgram a:link 	{color:#27c57a}
-.linkProgram a:visited {color:#27c57a}
+.linkProgram {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -50px; left:-5px; font-size: 0.6em; text-shadow:#505050 1px 1px;}
+.linkProgram a:link 	{color:red}
+.linkProgram a:visited {color:red}
 .linkProgram a:hover	{color:black}
 
-.linkPlace {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: 00px; left:160px; text-shadow:#505050 1px 1px;}
-.linkPlace a:link 	{color:#20e244}
-.linkPlace a:visited {color:#20e244}
+.linkPlace {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -50px; left:130px; font-size: 0.6em; text-shadow:#505050 1px 1px;}
+.linkPlace a:link 	{color:red}
+.linkPlace a:visited {color:red}
 .linkPlace a:hover	{color:black}
 
-.linkArrive {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -60px; left:240px; text-shadow:#505050 1px 1px;}
-.linkArrive a:link 	{color:#18cca5}
-.linkArrive a:visited {color:#18cca5}
+.linkArrive {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -50px; left:255px; font-size: 0.6em;  text-shadow:#505050 1px 1px;}
+.linkArrive a:link 	{color:red}
+.linkArrive a:visited {color:red}
 .linkArrive a:hover	{color:black}
 
-.linkSleep {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -20px; left:500px; text-shadow:#505050 1px 1px;}
-.linkSleep a:link 	{color:#158845}
-.linkSleep a:visited {color:#158845}
+.linkSleep {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -50px; left:450px; font-size: 0.6em;  text-shadow:#505050 1px 1px;}
+.linkSleep a:link 	{color:red}
+.linkSleep a:visited {color:red}
 .linkSleep a:hover	{color:black}
 
-.linkRegister {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -55px; left:680px; text-shadow:#505050 1px 1px;}
-.linkRegister a:link 	{color:#17c32f}
-.linkRegister a:visited {color:#17c32f}
+.linkRegister {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -50px; left:610px; font-size: 0.6em; text-shadow:#505050 1px 1px;}
+.linkRegister a:link 	{color:red}
+.linkRegister a:visited {color:red}
 .linkRegister a:hover	{color:black}
 
-.linkParticipants {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -10px; left:760px; text-shadow:#505050 1px 1px;}
-.linkParticipants a:link 	{color:#0e5f27}
-.linkParticipants a:visited {color:#0e5f27}
+.linkParticipants {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -50px; left:740px; font-size: 0.6em; text-shadow:#505050 1px 1px;}
+.linkParticipants a:link 	{color:red}
+.linkParticipants a:visited {color:red}
 .linkParticipants a:hover	{color:black}
 
 #header {margin: auto; text-align: left; position: relative; left: 130px; top: 20px;  font-size: 1.5em; }
@@ -78,45 +78,41 @@ a:visited { text-decoration:none; font-weight:bold; color:blue}
 
 #home {
 	width: 900px;
-	height: 615px;
+	height: 548px;
 	background-image:url(/images/accueil.jpg);
-	;font-weight: bold
+
 }
 
 #program {
 	width: 900px;
-	height: 615px;
+	height: 548px;
+	background-color: red !important;
 	background-image:url(/images/programme.jpg);
 }
 
 #place {
 	width: 900px;
 	height: 615px;
-	background-color:#909090;
 }
 
 #arrive {
 	width: 900px;
 	height: 615px;
-	background-color:#909090;
 }
 
 #sleep {
 	width: 900px;
 	height: 615px;
-	background-color:#909090;
 }
 
 #register {
 	width: 900px;
-	height: 720px;
-	background-color:#909090;
+	height: 590px;
 }
 
 #participants {
 	width: 900px;
 	height: 2000px;
-	background-color:#909090;
 }
 
 #place table img {
@@ -133,7 +129,6 @@ a:visited { text-decoration:none; font-weight:bold; color:blue}
 }
 
 .bold {
-	font-weight:bold
 	;color:#303030
 }
 

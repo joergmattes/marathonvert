@@ -38,7 +38,7 @@ public class RegistrationBean {
         	appendLine(body, "Your data as entered by yourself:");
         	appendLine(body, applicant.toString());
         	System.out.println(body.toString());
-        	MailService.sendMail(applicant.getEmail(), applicant.getFullname(), subject, body.toString(), false); // tmp
+        	MailService.sendMail(applicant.getEmail(), applicant.getFullname(), subject, body.toString(), true);
 		} catch (Exception e) {
 			MessageHelper.addErrorMessage("Email cannot be send. Either you have misspelled your email address, or the mail server is down. Please verify the email address that you've entered. If it is correct, try again later");
 			return null;
