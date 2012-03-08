@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/layout/layout_nomail.xhtml">
+  <ui:define name="content">
+	<h:form id="cForm">
+
+		<div id="admin" style="position:absolute; top: 30px;left:-5px;">
+			<ui:include src="links.xhtml" />
+
+			New registrations:
+			<h:dataTable
+				value="#{newRegistrationsBean.newRegistrations}"
+				var="reg"
+				border="1"
+			>
+				<h:column>
+					<f:facet name="header">Registration</f:facet>
+					<h:outputText value="#{reg.fullname}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Sex</f:facet>
+					<h:outputText value="#{reg.sex}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Partner</f:facet>
+					<h:outputText value="#{reg.partnerName}"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Accept With Partner" action="#{reg.acceptWithPartner}" rendered="#{reg.partnerSpecified}" style="width:200px"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Accept Without Partner" action="#{reg.acceptWithoutPartner}" style="width:200px"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Already Accepted" action="#{reg.alreadyAccepted}" style="width:200px"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Visitor" action="#{reg.acceptVisitor}"  style="width:100px"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Reject" action="#{reg.reject}"  style="width:100px"/>
+				</h:column>
+			</h:dataTable>
+
+
+		</div>
+	</h:form>
+  </ui:define>
+</ui:composition>
+</html>

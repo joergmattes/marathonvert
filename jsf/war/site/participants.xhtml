@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/layout/layout_nomail.xhtml">
+  <ui:define name="content">
+	<h:form id="cForm">
+
+		<div id="participants" style="position:absolute; top: 30px; left:-5px">
+			<!-- <img src="/images/fleur1.jpg" style="position:absolute; top:-20px; left:-280px"/> -->
+			<ui:include src="/layout/links.xhtml"/>
+	
+			<div class="frametext" style="position:absolute; top:80px; font-size:1.1em; width:820px">
+			<h:dataTable
+				value="#{participantsBean.participantsSortedByCountry}"
+				var="par"
+				border="0"
+			>
+				<h:column>
+					<h:outputText value="#{par.fullname}"/>
+				</h:column>
+				<h:column>
+					<h:outputText value=" &#215; #{par.country}"/>
+				</h:column>
+				<h:column>
+					<h:outputText value=" &#215; #{par.city}"/>
+				</h:column>
+			</h:dataTable>
+			</div>
+  		</div>
+
+	</h:form>
+  </ui:define>
+</ui:composition>
+</html>
+

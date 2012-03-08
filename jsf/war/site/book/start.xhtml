@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/layout/layout_nomail.xhtml">
+  <ui:define name="content">
+	<h:form id="cForm">
+
+		<h:messages style="color:red"/>
+
+		<div id="book" style="position:absolute; top: 30px;left:-5px;">
+			<h:panelGrid columns="2" style="position:relative; left:-3px">
+				<h:outputText value="Your email address:"/>
+				<h:inputText value="#{bookBean2.emailSearch1}"/>
+				<h:outputText value="Your partner/friend address if you want to book together:"/>
+				<h:inputText value="#{bookBean2.emailSearch2}"/>
+			</h:panelGrid>
+			<br/>
+			<h:commandButton action="#{bookBean2.step1}" value="Continue" style="width: 100px"/>
+			<h:commandButton action="#{bookBean2.cancel}" value="Cancel" style="width: 100px"/>
+		</div>
+	</h:form>
+  </ui:define>
+</ui:composition>
+</html>

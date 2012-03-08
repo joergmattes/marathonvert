@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/layout/layout_nomail.xhtml">
+  <ui:define name="content">
+	<h:form id="cForm">
+
+		<div id="admin" style="position:absolute; top: 30px;left:-5px;">
+			<ui:include src="links.xhtml" />
+
+			Beds:
+			<h:dataTable
+				value="#{bedsBean.beds}"
+				var="bed"
+				border="1"
+			>
+				<h:column>
+					<f:facet name="header">Location</f:facet>
+					<h:outputText value="#{bed.roomName}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Number</f:facet>
+					<h:outputText value="#{bed.key.name}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Participant</f:facet>
+					<h:outputText value="#{bed.participant.fullname}"/>
+				</h:column>
+			</h:dataTable>
+		</div>
+	</h:form>
+  </ui:define>
+</ui:composition>
+</html>

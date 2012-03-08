@@ -1,0 +1,142 @@
+body {
+	text-align:	center
+	;margin: auto
+	;background-color: #999999
+	;width: 1000px;
+	;height: 650px
+	;font-family: 'Comic Sans MS'
+	;font-size: 0.8em;
+}
+
+bodyLong {
+	text-align:	center
+	;margin: auto
+	;background-color: #999999
+	;width: 1000px;
+	;height: 200px
+	;font-family: 'Courier New', monospace
+	;font-size: 0.8em;
+}
+
+input {font-family: 'Comic Sans MS'; width: 250px}
+select {font-family: 'Comic Sans MS'; width: 256px}
+.inputWide {font-family: 'Comic Sans MS'; width: 700px}
+
+a:link { text-decoration:none; font-weight:bold; color:blue}
+a:visited { text-decoration:none; font-weight:bold; color:blue}
+
+/*
+.linkHomeT {filter:DropShadow(Color=black, OffX=1, OffY=1);text-shadow:black 1px 1px;opacity:0.30;filter:alpha(opacity=30);position:relative; top:42px; left:-215px; font-size: 1em; text-shadow:#505050 1px 1px;}
+.linkHomeT a:link 	{color:#606060}
+.linkHomeT a:visited {color:#606060}
+.linkHomeT a:hover	{color:black}
+*/
+
+.linkHome {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top:42px; left:-215px; font-size: 1em; text-shadow:#505050 1px 1px;}
+.linkHome a:link 	{color:#606060}
+.linkHome a:visited {color:#606060}
+.linkHome a:hover	{color:black}
+
+.linkProgram {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -45px; left:-10px; font-size: 1em; text-shadow:#505050 1px 1px;}
+.linkProgram a:link 	{color:#27c57a}
+.linkProgram a:visited {color:#27c57a}
+.linkProgram a:hover	{color:black}
+
+.linkPlace {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: 00px; left:160px; text-shadow:#505050 1px 1px;}
+.linkPlace a:link 	{color:#20e244}
+.linkPlace a:visited {color:#20e244}
+.linkPlace a:hover	{color:black}
+
+.linkArrive {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -60px; left:240px; text-shadow:#505050 1px 1px;}
+.linkArrive a:link 	{color:#18cca5}
+.linkArrive a:visited {color:#18cca5}
+.linkArrive a:hover	{color:black}
+
+.linkSleep {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -20px; left:500px; text-shadow:#505050 1px 1px;}
+.linkSleep a:link 	{color:#158845}
+.linkSleep a:visited {color:#158845}
+.linkSleep a:hover	{color:black}
+
+.linkRegister {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -55px; left:680px; text-shadow:#505050 1px 1px;}
+.linkRegister a:link 	{color:#17c32f}
+.linkRegister a:visited {color:#17c32f}
+.linkRegister a:hover	{color:black}
+
+.linkParticipants {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top: -10px; left:760px; text-shadow:#505050 1px 1px;}
+.linkParticipants a:link 	{color:#0e5f27}
+.linkParticipants a:visited {color:#0e5f27}
+.linkParticipants a:hover	{color:black}
+
+#header {margin: auto; text-align: left; position: relative; left: 130px; top: 20px;  font-size: 1.5em; }
+
+#footer {margin: auto; text-align: middle; position: relative; top: 65px;  font-size: 0.9em; }
+
+#content {
+	text-align: left; 
+	position: relative; left: 80px; top: 30px;
+}
+
+#home {
+	width: 900px;
+	height: 615px;
+	background-image:url(/images/accueil.jpg);
+	;font-weight: bold
+}
+
+#program {
+	width: 900px;
+	height: 615px;
+	background-image:url(/images/programme.jpg);
+}
+
+#place {
+	width: 900px;
+	height: 615px;
+	background-color:#909090;
+}
+
+#arrive {
+	width: 900px;
+	height: 615px;
+	background-color:#909090;
+}
+
+#sleep {
+	width: 900px;
+	height: 615px;
+	background-color:#909090;
+}
+
+#register {
+	width: 900px;
+	height: 720px;
+	background-color:#909090;
+}
+
+#participants {
+	width: 900px;
+	height: 2000px;
+	background-color:#909090;
+}
+
+#place table img {
+	width: 80px;
+	height: 80px;
+}
+
+.frametext {
+	position: relative; left: 30px; top: 20px;
+	width: 1000px;
+	height: 650px;
+	float: left;
+	font-size:1.35em
+}
+
+.bold {
+	font-weight:bold
+	;color:#303030
+}
+
+.topClass {
+	vertical-align: top
+}

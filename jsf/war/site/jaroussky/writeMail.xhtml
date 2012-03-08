@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/layout/layout_nomail.xhtml">
+  <ui:define name="content">
+	<h:form id="cForm">
+
+		<div id="admin" style="position:absolute; top: 30px;left:-5px;">
+			<ui:include src="links.xhtml" />
+
+			<h:panelGrid columns="2">
+			</h:panelGrid>
+			<hr/>
+			<h:panelGrid columns="2" columnClasses="topClass">
+				<h:outputText style="vertical-align:text-top" value="Mails of all participants"/>
+				<h:inputTextarea value="#{participantsBean.allMails}" rows="30" cols="100"/>
+				<h:outputText style="align: top" value="Mails of new registrations"/>
+				<h:inputTextarea value="#{allRegistrationsBean.newRegistrations}" rows="15" cols="100"/>
+				<h:outputText style="align: top" value="Mails of rejected registrations"/>
+				<h:inputTextarea value="#{allRegistrationsBean.rejectedRegistrations}" rows="15" cols="100"/>
+			</h:panelGrid>
+			
+		</div>
+	</h:form>
+  </ui:define>
+</ui:composition>
+</html>

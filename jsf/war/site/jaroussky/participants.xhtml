@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/layout/layout_nomail.xhtml">
+  <ui:define name="content">
+	<h:form id="cForm">
+
+		<div id="admin" style="position:absolute; top: 30px;left:-5px;">
+			<ui:include src="links.xhtml" />
+
+			Participants: (
+			<h:commandLink value="All" action="#{participantsBean.showAll}" />
+			- <h:commandLink value="Man" action="#{participantsBean.showMen}" />
+			- <h:commandLink value="Woman" action="#{participantsBean.showWomen}" />
+			)
+			<h:dataTable
+				value="#{participantsBean.participants}"
+				var="par"
+				border="1"
+			>
+				<h:column>
+					<f:facet name="header">Registration</f:facet>
+					<h:outputLink value="mailTo:#{par.email}">
+						<h:outputText value="#{par.fullname}"/>
+					</h:outputLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Sex</f:facet>
+					<h:outputText value="#{par.sex}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Pay EUR</f:facet>
+					<h:outputText value="#{par.amountToPayEuro}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Paid?</f:facet>
+					<h:outputText value="#{par.payedCd}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Room Type</f:facet>
+					<h:outputText value="#{par.roomType}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Partner</f:facet>
+					<h:outputText value="#{par.partnerName}"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Send Mail" action="#{par.sendAcceptanceMail}" rendered="#{not par.accMailSent}" style="width:90px"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Payment OK" action="#{par.paymentOk}" rendered="#{not par.paymentOk}" style="width:90px"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Delete" action="#{par.delete}" style="width:90px"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Cancel Booking" action="#{par.cancelBooking}" rendered="#{par.booked}" style="width:90px"/>
+				</h:column>
+			</h:dataTable>
+			Total = <h:outputText value="#{participantsBean.total}"/>, Dancers = <h:outputText value="#{participantsBean.totalWithoutVisitors}"/>
+		</div>
+	</h:form>
+  </ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/layout/layout_nomail.xhtml">
+  <ui:define name="content">
+	<h:form id="cForm">
+
+		<h:messages />
+
+		<div id="book" style="position:absolute; top: 30px;left:-5px;">
+			Booking for: "<h:outputText value="#{bookBean2.bookingFor}"/>"
+			<br/><br/>
+			Choose your place (prices are per person and weekend):
+			<br/><h:commandButton rendered="#{bookBean2.stays3Nights}" action="#{bookBean2.choosePrivateRoom}" value="Marathon house: Private Room (80 EUR)" style="width:500px"/>
+			<br/><h:commandButton rendered="#{bookBean2.stays3Nights}" action="#{bookBean2.chooseDormitoryBed}" value="Marathon house: Dormitory Bed (40 EUR)" style="width:500px"/>
+			<br/><h:commandButton action="#{bookBean2.chooseDormitoryCarpet}" value="Marathon house: Dormitory Carpet with sleeping bag (24 EUR)" style="width:500px"/>
+			<br/><h:commandButton rendered="#{not bookBean2.stays3Nights}" action="#{bookBean2.chooseHotel}" value="Country Hotel La Balmondiere Room (3-5persons each) (40 EUR)" style="width:500px"/>
+			<br/><h:commandButton action="#{bookBean2.chooseCamping}" value="Camping (15 EUR)" style="width:500px"/>
+			<br/><h:commandButton action="#{bookBean2.chooseIndependent}" value="I will organize my own accomodation" style="width:500px"/>
+			<br/><h:commandButton action="#{bookBean2.cancel}" value="Cancel" style="width: 100px"/>
+			
+		</div>
+	</h:form>
+  </ui:define>
+</ui:composition>
+</html>

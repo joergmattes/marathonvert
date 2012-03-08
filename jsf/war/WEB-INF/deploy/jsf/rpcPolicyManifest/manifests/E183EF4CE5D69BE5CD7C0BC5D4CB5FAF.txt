@@ -1,0 +1,2 @@
+serviceClass: com.joerg.jsf.client.GreetingService
+path: B462C976DF29DD5E97A79D5D3B5445D6.gwt.rpc

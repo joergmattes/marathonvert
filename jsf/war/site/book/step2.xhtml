@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/layout/layout_nomail.xhtml">
+  <ui:define name="content">
+	<h:form id="cForm">
+
+		<h:messages />
+
+		<div id="book" style="position:absolute; top: 30px;left:-5px;">
+			Booking for: "<h:outputText value="#{bookBean2.bookingFor}"/>" - <h:outputText value="#{bookBean2.roomType}"/>
+			<br/><br/>
+			
+			<h:dataTable
+				value="#{bookBean2.bedPlaces}"
+				var="bed"
+				border="1"
+			>
+				<h:column>
+					<f:facet name="header">Description</f:facet>
+					<h:outputText value="#{bed.description}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Bed Number</f:facet>
+					<h:outputText value="#{bed.key.name}"/>
+				</h:column>
+				<h:column rendered="#{not bookBean2.part2}">
+					<h:commandButton value="Choose" action="#{bed.chooseForPart1}" rendered="#{bed.free and not bookBean2.bed1Chosen}" style="width:200px"/>
+					<h:outputText value="#{bed.chosenBy}" rendered="#{not bed.free}" style="width:200px"/>
+				</h:column>
+				<h:column rendered="#{bookBean2.part2}">
+					<h:commandButton value="Choose for partner 1" action="#{bed.chooseForPart1}" rendered="#{bed.free and not bookBean2.bed1Chosen}" style="width:200px"/>
+					<h:outputText value="#{bed.chosenBy}" rendered="#{not bed.free}" style="width:200px"/>
+				</h:column>
+				<h:column rendered="#{bookBean2.part2}">
+					<h:commandButton value="Choose for partner 2" action="#{bed.chooseForPart2}" rendered="#{bed.free and not bookBean2.bed2Chosen}" style="width:200px"/>
+					<h:outputText value="#{bed.chosenBy}" rendered="#{not bed.free}" style="width:200px"/>
+				</h:column>
+			</h:dataTable>
+			<h:commandButton value="Finish the booking" disabled="#{not bookBean2.finishable}" action="#{bookBean2.end}" style="width:200px"/>
+			<h:commandButton value="Reset your choices" action="#{bookBean2.resetChoices}" style="width:200px"/>
+			<h:commandButton value="Back" action="#{bookBean2.backToStep1}" style="width:200px"/>
+			
+		</div>
+	</h:form>
+  </ui:define>
+</ui:composition>
+</html>
