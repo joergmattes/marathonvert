@@ -22,7 +22,7 @@ public class MailService {
 		Message msg = new MimeMessage(session);
 		msg.setFrom(faustine);
 		msg.addRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail, recipientFullname));
-		if (false) { //sendCC) {
+		if (sendCC) {
 			msg.addRecipient(Message.RecipientType.CC, faustine);
 		}
 
