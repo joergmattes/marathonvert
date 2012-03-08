@@ -162,12 +162,12 @@ public class Registration {
 		appendLine(b, "Last name", lastName);
 		appendLine(b, "Email", email);
 		appendLine(b, "Sex", sex);
-		appendLine(b, "Country", country);
+		appendLine(b, "Nationality", country);
 		appendLine(b, "City", city);
 		appendLine(b, "Name of partner", partnerName);
 		appendLine(b, "Email of partner", partnerEmail);
 		appendLine(b, "City of partner", partnerCity);
-		appendLine(b, "Country of partner", partnerCountry);
+		appendLine(b, "Nationality of partner", partnerCountry);
 //		ToStringBuilder b = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
 		return b.toString();
 	}
