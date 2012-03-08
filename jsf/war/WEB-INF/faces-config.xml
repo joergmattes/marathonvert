@@ -67,5 +67,15 @@
   		<to-view-id>/site/book/cancelBook.xhtml</to-view-id>
   		<redirect/>
   	</navigation-case>
+  	<navigation-case>
+  		<from-outcome>participants</from-outcome>
+  		<to-view-id>/site/jaroussky/participants.xhtml</to-view-id>
+  		<redirect/>
+  	</navigation-case>
+  	<navigation-case>
+  		<from-outcome>newRegistrations</from-outcome>
+  		<to-view-id>/site/jaroussky/newRegistrations.xhtml</to-view-id>
+  		<redirect/>
+  	</navigation-case>
   </navigation-rule>
 </faces-config>

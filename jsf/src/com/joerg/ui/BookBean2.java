@@ -171,6 +171,18 @@ public class BookBean2 extends BaseBean {
 		return "step2";
 	}
 
+	public String chooseMansard() {
+		roomType = BedPlace.TYPE_MANSARD;
+		selectBedPlaces();
+		return "step2";
+	}
+	
+	public String chooseTipi() {
+		roomType = BedPlace.TYPE_TIPI;
+		selectBedPlaces();
+		return "step2";
+	}
+
 	public String chooseDormitoryCarpet() {
 		roomType = BedPlace.TYPE_DORM_CARPET;
 		selectBedPlaces();
@@ -185,7 +197,7 @@ public class BookBean2 extends BaseBean {
 	
 	public String chooseCamping() {
 		roomType = BedPlace.TYPE_CAMPING;
-		return finishParticipantsWithoutRoom(15L);
+		return finishParticipantsWithoutRoom(20L);
 	}
 	
 	public String chooseIndependent() {
@@ -196,13 +208,21 @@ public class BookBean2 extends BaseBean {
 	private String finishParticipantsWithoutRoom(Long amountToAdd) {
 		PersistenceManager pm = getPm();
 		Participant part1 = pm.getObjectById(Participant.class, part1Key);
+		Long correctedAmountToAdd = amountToAdd;
+		if (part1.getNumberOfDays() == 4) {
+			correctedAmountToAdd = 30l;
+		}
 		Participant part2 = null;
 		part1.setRoomType(roomType);
-		part1.addAmountToPay(amountToAdd);
+		part1.addAmountToPay(correctedAmountToAdd);
 		if (part2Key != null) {
+			correctedAmountToAdd = amountToAdd;
 			part2 = pm.getObjectById(Participant.class, part2Key);
+			if (part2.getNumberOfDays() == 4) {
+				correctedAmountToAdd = 30l;
+			}
 			part2.setRoomType(roomType);
-			part2.addAmountToPay(amountToAdd);
+			part2.addAmountToPay(correctedAmountToAdd);
 		}
 		pm.close();
 		
@@ -328,7 +348,7 @@ public class BookBean2 extends BaseBean {
 	public String getPaymentInformation(Participant part) {
 		Long chf = part.getAmountToPayChf();
     	StringBuffer payment = new StringBuffer();
-		Util.appendLine(payment, "You have time until the 31th may 2011 to pay / Date limite acceptée du paiement le 31 mai 2011.");
+		Util.appendLine(payment, "You have time until the 31th may 2012 to pay / Date limite acceptée du paiement le 31 mai 2012.");
 		Util.appendLine(payment, "Please put your name as payment reference (and your partner's name, if you pay together). / Merci d'indiquer votre nom sur la reference de paiement (ainsi que celui de votre partenaire si vous payez ensemble).");
     	Util.appendLine(payment, "");
 		Util.appendLine(payment, "French account / Compte français:");

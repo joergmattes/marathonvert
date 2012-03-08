@@ -188,15 +188,15 @@ public class Registration {
 		return StringUtils.isNotBlank(partnerEmail);
 	}
 	
-	public void acceptWithPartner() {
-		accept(true);
+	public String acceptWithPartner() {
+		return accept(true);
 	}
 	
-	public void acceptWithoutPartner() {
-		accept(false);
+	public String acceptWithoutPartner() {
+		return accept(false);
 	}
 
-	public void acceptVisitor() {
+	public String acceptVisitor() {
 		PersistenceManager pm = getPm();
 	    
         Participant participant = new Participant(this);
@@ -207,9 +207,10 @@ public class Registration {
         updateStateCdInActiveTrx("VISITOR_ACCEPTED", pm);
 
 		pm.close();
+		return "newRegistrations";
 	}
 
-	private void accept(boolean withPartner) {
+	private String accept(boolean withPartner) {
 		PersistenceManager pm = getPm();
     
         Participant participant = new Participant(this);
@@ -225,20 +226,28 @@ public class Registration {
     		partner.setStateCd("NEW");
     		partner.setPartnerEmail(getEmail());
     		partner.setPartnerName(getFullname());
+			if (partner.getNumberOfDays() == 3) {
+				partner.setAmountToPayEuro(Participant.DEFAULT_AMOUNT_3);
+			} else {
+				partner.setAmountToPayEuro(Participant.DEFAULT_AMOUNT_4);
+			}
     		pm.makePersistent(partner);
         }
         
         updateStateCdInActiveTrx("ACCEPTED", pm);
 
 		pm.close();
+		return "newRegistrations";
 	}
 
-	public void alreadyAccepted() {
+	public String alreadyAccepted() {
 		updateStateCdInNewTrx("ALREADY_ACCEPTED");
+		return "newRegistrations";
 	}
 	
-	public void reject() {
+	public String reject() {
 		updateStateToRejected();
+		return "newRegistrations";
 	}
 	
 	private PersistenceManager getPm() {
@@ -273,11 +282,12 @@ public class Registration {
 		}
 	}
 	
-	public void delete() {
+	public String delete() {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		Registration myself = (Registration) pm.getObjectById(getClass(), getKey());
 		pm.deletePersistent(myself);
 		pm.close();
+		return "newRegistrations";
 	}
 	
     

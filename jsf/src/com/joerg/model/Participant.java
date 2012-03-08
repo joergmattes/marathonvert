@@ -22,7 +22,8 @@ import com.joerg.ui.util.MessageHelper;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION, detachable="true")
 public class Participant {
-	public static Long DEFAULT_AMOUNT = 90l;
+	public static Long DEFAULT_AMOUNT_3 = 95l;
+	public static Long DEFAULT_AMOUNT_4 = 130l;
 	
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -56,7 +57,7 @@ public class Participant {
     private Date dateCreated = new Date();
 	
 	@Persistent
-	private Long amountToPayEuro = DEFAULT_AMOUNT;
+	private Long amountToPayEuro = null;
 	
 	@Persistent
 	private String payedCd = "NOTYET";
@@ -86,6 +87,12 @@ public class Participant {
 			BeanUtils.copyProperties(this, registration);
 			stateCd = "NEW";
 			key = null;
+			if (numberOfDays == 3) {
+				amountToPayEuro = DEFAULT_AMOUNT_3;
+			} else {
+				amountToPayEuro = DEFAULT_AMOUNT_4;
+			}
+			
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -213,7 +220,7 @@ public class Participant {
 		this.partnerName = partnerName;
 	}
 	
-	public void sendAcceptanceMail() {
+	public String sendAcceptanceMail() {
         try {
         	String subject = "Tango Marathon Vert (" + getFullname() + ") --> you're in!";
         	StringBuffer body = new StringBuffer();
@@ -242,9 +249,10 @@ public class Participant {
 		Participant myself = (Participant) pm.getObjectById(getClass(), getKey());
 		myself.setAccMailSent(true);
 		pm.close();
+		return "participants";
 	}
 	
-	public void delete() {
+	public String delete() {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		Participant myself = (Participant) pm.getObjectById(getClass(), getKey());
 		if (bedKey != null) {
@@ -254,18 +262,20 @@ public class Participant {
 		}
 		pm.deletePersistent(myself);
 		pm.close();
+		return "participants";
 	}
 
 	public boolean isAccMailSent() {
 		return accMailSent;
 	}
 	
-	public void paymentOk() {
+	public String paymentOk() {
 		try {
 			PersistenceManager pm = PMF.get().getPersistenceManager();
 			Participant myself = (Participant) pm.getObjectById(getClass(), getKey());
 			myself.setPayedCd("OK");
 			pm.close();
+			
 
 			String subject = "Tango Marathon Vert (" + getFullname() + ") --> payment received!";
 			StringBuffer body = new StringBuffer();
@@ -279,15 +289,20 @@ public class Participant {
 		} catch (Exception e) {
 			MessageHelper.addErrorMessage("Email cannot be send: " + e.getMessage());
 		}
+		return "participants";
 	}
 	
-	public void cancelBooking() {
+	public String cancelBooking() {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		Participant myself = (Participant) pm.getObjectById(getClass(), getKey());
 		Key bedKey = myself.getBedKey();
 		myself.setRoomType(null);
 		myself.setBedKey(null);
-		myself.setAmountToPayEuro(DEFAULT_AMOUNT);
+		if (myself.getNumberOfDays() == 3) {
+			myself.setAmountToPayEuro(DEFAULT_AMOUNT_3);
+		} else {
+			myself.setAmountToPayEuro(DEFAULT_AMOUNT_4);
+		}
 		if (bedKey != null) {
 			BedPlace bed = (BedPlace) pm.getObjectById(BedPlace.class, bedKey);
 			bed.setFree(true);
@@ -295,7 +310,7 @@ public class Participant {
 		}
 		
 		pm.close();
-
+		return "participants";
 	}
 
 	public void setAccMailSent(boolean accMailSent) {

@@ -11,7 +11,7 @@
   <ui:define name="content">
 	<h:form id="cForm">
 
-	<h:messages />
+
 		<div id="register" style="position:absolute; top: 50px; left:-5px">
 			<!-- <img src="/images/fleur1.jpg" style="position:absolute; top:-20px; left:-280px"/> -->
 			<ui:include src="/layout/links.xhtml"/>
@@ -39,33 +39,33 @@ Registering early will not necessarily guarantee your place. -->
 	
 	<p>If there are cancellations, we will contact those on the waiting list that can take over your payment.</p>
 	
-	
+		<h:messages errorStyle="color: red" />
 	<h:panelGrid columns="2" style="position:relative; left:-3px" cellpadding="0" cellspacing="0">
 		<h:outputText value="I want to stay 3/4 days "/>
-		<h:selectOneMenu value="#{registrationBean.applicant.numberOfDays}" >
+		<h:selectOneMenu id="NumberOfDays" value="#{registrationBean.applicant.numberOfDays}" required="true" >
 			<f:selectItem itemLabel="Select..." itemValue=""/>
 			<f:selectItem itemLabel="3 days" itemValue="3"/>
 			<f:selectItem itemLabel="4 days" itemValue="4"/>
 		</h:selectOneMenu>
 
 		<h:outputText value="First Name"/>
-		<h:inputText value="#{registrationBean.applicant.firstName}"/>
+		<h:inputText id="FirstName" value="#{registrationBean.applicant.firstName}"  required="true"/>
 		
 		<h:outputText value="Last Name"/>
-		<h:inputText value="#{registrationBean.applicant.lastName}"/>
+		<h:inputText id="LastName" value="#{registrationBean.applicant.lastName}" required="true"/>
 		
 		<h:outputText value="Email"/>
-		<h:inputText value="#{registrationBean.applicant.email}"/>
+		<h:inputText id="Email" value="#{registrationBean.applicant.email}" required="true"/>
 		
 		<h:outputText value="Sex"/>
-		<h:selectOneMenu value="#{registrationBean.applicant.sex}" >
+		<h:selectOneMenu id="Sex" value="#{registrationBean.applicant.sex}" required="true" >
 			<f:selectItem itemLabel="Select..." itemValue=""/>
 			<f:selectItem itemLabel="Woman" itemValue="Woman"/>
 			<f:selectItem itemLabel="Man" itemValue="Man"/>
 		</h:selectOneMenu>
 		
 		<h:outputText value="Nationality"/>
-		<h:selectOneMenu value="#{registrationBean.applicant.country}" >
+		<h:selectOneMenu id="Nationality" value="#{registrationBean.applicant.country}" required="true" >
 			<f:selectItem itemLabel="Select..." itemValue=""/>
 			<f:selectItem itemLabel="Afganistan" itemValue="Afghanistan"/>
 			<f:selectItem itemLabel="Albania" itemValue="Albania"/>
@@ -316,7 +316,7 @@ Registering early will not necessarily guarantee your place. -->
 		</h:selectOneMenu>
 
 		<h:outputText value="City"/>
-		<h:inputText value="#{registrationBean.applicant.city}"/>
+		<h:inputText id="City" value="#{registrationBean.applicant.city}" required="true"/>
 
 		<h:outputText value="Name of partner"/>
 		<h:panelGroup>
