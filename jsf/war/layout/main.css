@@ -32,6 +32,11 @@ a:visited { text-decoration:none; color:blue}
 .linkHomeT a:hover	{color:black}
 */
 
+.linkMenu {position:absolute; top:-50px;color:red; filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;text-shadow:#505050 1px 1px;}
+.linkMenu a:link 	{color:red}
+.linkMenu a:visited {color:red}
+.linkMenu a:hover	{color:black}
+
 .linkHome {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top:-50px; left:-110px; font-size: 0.6em; text-shadow:#505050 1px 1px;}
 .linkHome a:link 	{color:red}
 .linkHome a:visited {color:red}
@@ -121,7 +126,7 @@ a:visited { text-decoration:none; color:blue}
 }
 
 .frametext {
-	position: relative; left: 30px; top: 20px;
+	position: relative; left: 0px; top: 20px;
 	width: 1000px;
 	height: 650px;
 	float: left;
