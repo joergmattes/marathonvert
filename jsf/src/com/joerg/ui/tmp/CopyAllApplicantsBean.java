@@ -60,21 +60,35 @@ public class CopyAllApplicantsBean extends BaseBean {
 	
 	public void createBeds() {
 		List<BedPlace> beds = new ArrayList<BedPlace>();
-		createBed(beds, "101a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Faustine'", 2, true, 80, false);
-		createBed(beds, "101b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Faustine'", 2, true, 80, false);
-		createBed(beds, "102a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Jeremie'", 2, true, 80, false);
-		createBed(beds, "102b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Jeremie'", 2, true, 80, false);		
-		createBed(beds, "103a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'MM'", 2, true, 80, false);
-		createBed(beds, "103b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'MM'", 2, true, 80, false);		
-		createBed(beds, "104a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Philippine'", 2, true, 80, false);
-		createBed(beds, "104b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Philippine'", 2, true, 80, false);
+		createBed(beds, "101a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'MM'", 2, true, 80, false);
+		createBed(beds, "101b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'MM'", 2, true, 80, false);
+		createBed(beds, "102a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Philippine'", 2, true, 80, false);
+		createBed(beds, "102b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Philippine'", 2, true, 80, false);		
+		createBed(beds, "103a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Jeremie'", 2, true, 80, false);
+		createBed(beds, "103b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Jeremie'", 2, true, 80, false);		
+		createBed(beds, "104a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Faustine'", 2, true, 80, false);
+		createBed(beds, "104b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Faustine'", 2, true, 80, false);
 		createBed(beds, "105a", BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, true, 70, false);
 		createBed(beds, "105b", BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, true, 70, false);
 		createBed(beds, "106",  BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, false, 70, false);
 
-		createBed(beds, "107a", BedPlace.TYPE_TIPI, "Marathon House Tipi", 3, true, 50, false);
-		createBed(beds, "107b", BedPlace.TYPE_TIPI, "Marathon House Tipi", 3, true, 50, false);
-		createBed(beds, "108",  BedPlace.TYPE_TIPI, "Marathon House Tipi", 3, false, 50, false);
+		createBed(beds, "107a", BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, true, 50, false);
+		createBed(beds, "107b", BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, true, 50, false);
+		createBed(beds, "108",  BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, false, 50, false);
+
+		createBed(beds, "109a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
+		createBed(beds, "109b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
+		createBed(beds, "110a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
+		createBed(beds, "110b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
+		createBed(beds, "111", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 50, false);
+		createBed(beds, "112", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 50, false);
+
+		createBed(beds, "113a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
+		createBed(beds, "113b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
+		createBed(beds, "114a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
+		createBed(beds, "114b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
+		createBed(beds, "115", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 50, false);
+		createBed(beds, "116", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 50, false);
 
 		createBed(beds, "201a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
 		createBed(beds, "201b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);		

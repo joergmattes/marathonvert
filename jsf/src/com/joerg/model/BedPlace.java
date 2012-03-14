@@ -76,7 +76,8 @@ public class BedPlace implements Serializable {
 
     public final static String TYPE_PRIVATE 	= "Marathon House Private Room";
     public final static String TYPE_MANSARD 	= "Marathon House Mansard Room";
-    public final static String TYPE_TIPI	 	= "Marathon House Tipi";
+    public final static String TYPE_TIPI	 	= "Marathon House Tipi (with beds)";
+    public final static String TYPE_TENT	 	= "Marathon House Tent (with beds)";
     public final static String TYPE_DORM_BED 	= "Marathon House Dormitory (beds)";
     public final static String TYPE_DORM_CARPET = "Marathon House Dormitory (carpet)";
     public final static String TYPE_HOTEL 		= "Country Hotel La Balmondiere";
