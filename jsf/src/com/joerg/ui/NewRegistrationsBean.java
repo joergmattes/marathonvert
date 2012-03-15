@@ -19,8 +19,7 @@ public class NewRegistrationsBean extends BaseBean {
 			PersistenceManager pm = PMF.get().getPersistenceManager();
 		    Query query = pm.newQuery(Registration.class);
 			    query.setFilter("stateCd == 'NEW'");
-	//		    query.setOrdering("dateCreated asc");
-	
+			    query.setOrdering("dateCreated desc");
 		    try {
 		    	newRegistrations = (List<Registration>) query.execute();
 		    } finally {

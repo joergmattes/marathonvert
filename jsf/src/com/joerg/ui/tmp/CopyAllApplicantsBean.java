@@ -108,6 +108,7 @@ public class CopyAllApplicantsBean extends BaseBean {
 		createBed(beds, "209", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
 		createBed(beds, "210", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
 		createBed(beds, "211", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
+		createBed(beds, "212", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
 		
 //		createBed(beds, "301", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 14, false, 24, true);
 //		createBed(beds, "302", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 14, false, 24, true);		

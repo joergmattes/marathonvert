@@ -8,4 +8,8 @@
         <property name="country" direction="asc"/>
         <property name="city" direction="asc"/>
     </datastore-index>
+    <datastore-index kind="Registration" ancestor="false" source="manual">
+        <property name="stateCd" direction="asc"/>
+        <property name="dateCreated" direction="desc"/>
+    </datastore-index>
 </datastore-indexes>
