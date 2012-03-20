@@ -390,9 +390,15 @@ public class BookBean2 extends BaseBean {
 			Util.appendLine(body, "");
 			Util.appendLine(body, getPaymentInformation(part));
 			Util.appendLine(body, "");
-			Util.appendLine(
+			if (part.getNumberOfDays() == 3) {
+				Util.appendLine(
 					body,
-					"Included in the marathon price are two breakfasts, two dinners, as well as fruit and snacks. / Le prix du marathon inclue 2 petits déjeuners, deux diners, ainsi que des fruits et boissons.");
+					"Included in the marathon price are 2 breakfasts, 2 dinners, as well as fruit and snacks. / Le prix du marathon inclue 2 petits déjeuners, 2 diners, ainsi que des fruits et boissons.");
+			} else {
+				Util.appendLine(
+					body,
+					"Included in the marathon price are 3 breakfasts, 3 dinners, as well as fruit and snacks. / Le prix du marathon inclue 3 petits déjeuners, 3 diners, ainsi que des fruits et boissons.");
+			}
 			Util.appendLine(body,
 					"AUCUN REMBOURSEMENT NE SERA EFFECTUE EN CAS DE NON PRESENCE DE VOTRE PART.");
 			Util.appendLine(body, "Merci et a bientôt,");
