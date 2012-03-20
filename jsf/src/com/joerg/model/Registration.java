@@ -200,7 +200,7 @@ public class Registration {
 		PersistenceManager pm = getPm();
 	    
         Participant participant = new Participant(this);
-        participant.setAmountToPayEuro(50L);
+        participant.setAmountToPayEuro(70L);
         participant.setStateCd("VISITOR");
         pm.makePersistent(participant);
         
@@ -218,8 +218,8 @@ public class Registration {
         if (withPartner) {
     		Participant partner = new Participant();
     		partner.setNumberOfDays(numberOfDays);
-    		partner.setCity(getCity());
-    		partner.setCountry(getCountry());
+    		partner.setCity(getPartnerCity());
+    		partner.setCountry(getPartnerCountry());
     		partner.setEmail(getPartnerEmail());
     		partner.setFullname(getPartnerName());
     		partner.setSex(getOppositeSex());

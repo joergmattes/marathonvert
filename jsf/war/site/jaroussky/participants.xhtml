@@ -64,7 +64,13 @@
 					<h:commandButton value="Cancel Booking" action="#{par.cancelBooking}" rendered="#{par.booked}" style="width:90px"/>
 				</h:column>
 			</h:dataTable>
-			Total = <h:outputText value="#{participantsBean.total}"/>, Dancers = <h:outputText value="#{participantsBean.totalWithoutVisitors}"/>
+			Total = <h:outputText value="#{participantsBean.total}"/>
+			<br/>
+			 Total 3 days = <h:outputText value="#{participantsBean.total3Days}"/>
+			<br/>
+			 Total 4 days = <h:outputText value="#{participantsBean.total4Days}"/>
+			<br/>
+			 Visitors = <h:outputText value="#{participantsBean.totalVisitors}"/>
 		</div>
 	</h:form>
   </ui:define>

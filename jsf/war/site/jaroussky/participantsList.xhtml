@@ -56,7 +56,13 @@
 					<h:outputText value="#{par.bedKey.name}"/>
 				</h:column>
 			</h:dataTable>
-			Total participants = <h:outputText value="#{participantsBean.total}"/>, Dancers = <h:outputText value="#{participantsBean.totalWithoutVisitors}"/>
+			Total participants = <h:outputText value="#{participantsBean.total}"/>
+			<br/>
+			 Visitors = <h:outputText value="#{participantsBean.totalVisitors}"/>
+			<br/>
+			 Total 3 days = <h:outputText value="#{participantsBean.total3Days}"/>
+			<br/>
+			 Total 4 days = <h:outputText value="#{participantsBean.total4Days}"/>
 			<br/>
 			Total budget (expected) = <h:outputText value="#{participantsBean.totalBudgetExp}"/> Euro
 			<br/>

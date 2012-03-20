@@ -1,5 +1,6 @@
 package com.joerg.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Date;
@@ -21,7 +22,9 @@ import com.joerg.ui.Util;
 import com.joerg.ui.util.MessageHelper;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION, detachable="true")
-public class Participant {
+public class Participant implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	public static Long DEFAULT_AMOUNT_3 = 95l;
 	public static Long DEFAULT_AMOUNT_4 = 130l;
 	

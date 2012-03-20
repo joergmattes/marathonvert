@@ -196,7 +196,11 @@ public class BedPlace implements Serializable {
 		if (getTmpString() != null) {
 			return getTmpString();
 		} else if (!free) {
-			return "(not available)";
+			if (participant != null) {
+				return getParticipant().getFullname();
+			} else {
+				return "(not available)";
+			}
 		} else {
 			return "";
 		}
