@@ -47,6 +47,8 @@ public class RegistrationBean {
 		applicant.setLastName(StringUtils.capitalize(applicant.getLastName()));
 		applicant.setFirstName(StringUtils.capitalize(applicant.getFirstName()));
 		applicant.setPartnerName(StringUtils.capitalize(applicant.getPartnerName()));
+		applicant.setEmail(StringUtils.trim(applicant.getEmail()));
+		applicant.setPartnerEmail(StringUtils.trim(applicant.getPartnerEmail()));
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
         try {

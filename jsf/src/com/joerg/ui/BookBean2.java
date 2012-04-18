@@ -210,6 +210,12 @@ public class BookBean2 extends BaseBean {
 		return "step2";
 	}
 
+	public String chooseTent() {
+		roomType = BedPlace.TYPE_TENT;
+		selectBedPlaces();
+		return "step2";
+	}
+
 	public String chooseDormitoryCarpet() {
 		roomType = BedPlace.TYPE_DORM_CARPET;
 		selectBedPlaces();
@@ -224,32 +230,36 @@ public class BookBean2 extends BaseBean {
 
 	public String chooseCamping() {
 		roomType = BedPlace.TYPE_CAMPING;
-		return finishParticipantsWithoutRoom(20L);
+		return finishParticipantsWithoutRoom(true);
 	}
 
 	public String chooseIndependent() {
 		roomType = BedPlace.TYPE_INDEPENDENT;
-		return finishParticipantsWithoutRoom(0L);
+		return finishParticipantsWithoutRoom(false);
 	}
 
-	private String finishParticipantsWithoutRoom(Long amountToAdd) {
+	private String finishParticipantsWithoutRoom(boolean camping) {
 		PersistenceManager pm = getPm();
 		Participant part1 = pm.getObjectById(Participant.class, part1Key);
-		Long correctedAmountToAdd = amountToAdd;
-		if (part1.getNumberOfDays() == 4) {
-			correctedAmountToAdd = 30l;
+		if (camping) {
+			if (part1.getNumberOfDays() == 3) {
+				part1.addAmountToPay(20L);
+			} else {
+				part1.addAmountToPay(30L);
+			}
 		}
 		Participant part2 = null;
 		part1.setRoomType(roomType);
-		part1.addAmountToPay(correctedAmountToAdd);
 		if (part2Key != null) {
-			correctedAmountToAdd = amountToAdd;
 			part2 = pm.getObjectById(Participant.class, part2Key);
-			if (part2.getNumberOfDays() == 4) {
-				correctedAmountToAdd = 30l;
+			if (camping) {
+				if (part2.getNumberOfDays() == 3) {
+					part2.addAmountToPay(20L);
+				} else {
+					part2.addAmountToPay(30L);
+				}
 			}
 			part2.setRoomType(roomType);
-			part2.addAmountToPay(correctedAmountToAdd);
 		}
 		pm.close();
 
