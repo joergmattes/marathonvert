@@ -10,6 +10,7 @@ import javax.jdo.Query;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.joerg.model.Participant;
 import com.joerg.model.Registration;
 import com.joerg.persistance.PMF;
 
@@ -17,6 +18,7 @@ public class AllRegistrationsBean extends BaseBean {
 
 	private static final long serialVersionUID = 1L;
 	List<Registration> allRegistrations;
+	List<Participant> allParticipants;
 
 	@SuppressWarnings("unchecked")
 	public List<Registration> getAllRegistrations() {
@@ -34,6 +36,20 @@ public class AllRegistrationsBean extends BaseBean {
 		    }
 		}
 		return allRegistrations;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Participant> getAllParticipants() {
+		if (allParticipants == null) {
+			PersistenceManager pm = PMF.get().getPersistenceManager();
+		    Query query = pm.newQuery(Participant.class);
+		    try {
+		    	allParticipants = (List<Participant>) query.execute();
+		    } finally {
+		        query.closeAll();
+		    }
+		}
+		return allParticipants;
 	}
 
 	public String getNewRegistrations() {
@@ -59,6 +75,28 @@ public class AllRegistrationsBean extends BaseBean {
 				if (registration.isPartnerSpecified()) {
 					mails.add(registration.getPartnerEmail());
 				}
+			}
+		}
+		return StringUtils.join(mails, ", ");
+	}
+
+	public String getNotYetPaidParticipants() {
+		Set<String> mails = new HashSet<String>();
+		List<Participant> participants = getAllParticipants();
+		for (Participant participant : participants) {
+			if ("NOTYET".equals(participant.getPayedCd())) {
+				mails.add(participant.getEmail());
+			}
+		}
+		return StringUtils.join(mails, ", ");
+	}
+	
+	public String getMailSentAndNotYetBookedParticipants() {
+		Set<String> mails = new HashSet<String>();
+		List<Participant> participants = getAllParticipants();
+		for (Participant participant : participants) {
+			if (participant.isAccMailSent() && participant.getRoomType() == null) {
+				mails.add(participant.getEmail());
 			}
 		}
 		return StringUtils.join(mails, ", ");

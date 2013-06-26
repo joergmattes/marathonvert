@@ -88,9 +88,9 @@ public class ParticipantsBean extends BaseBean {
 			List<Participant> results = (List<Participant>) query.execute();
 			List<Participant> participants = new ArrayList<Participant>();
 			for (Participant participant : results) {
-				// if (!"VISITOR".equals(participant.getStateCd())) {
-				participants.add(participant);
-				// }
+				if(participant.isAccMailSent()) {
+					participants.add(participant);
+				}
 			}
 			return participants;
 		} finally {

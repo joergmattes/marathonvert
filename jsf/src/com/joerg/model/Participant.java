@@ -18,6 +18,7 @@ import org.apache.commons.lang.StringUtils;
 import com.google.appengine.api.datastore.Key;
 import com.joerg.persistance.PMF;
 import com.joerg.service.MailService;
+import com.joerg.ui.BookBean2;
 import com.joerg.ui.Util;
 import com.joerg.ui.util.MessageHelper;
 
@@ -26,7 +27,7 @@ public class Participant implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	public static Long DEFAULT_AMOUNT_3 = 95l;
-	public static Long DEFAULT_AMOUNT_4 = 130l;
+	public static Long DEFAULT_AMOUNT_4 = 150l;
 	
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -354,5 +355,14 @@ public class Participant implements Serializable {
 
 	public void setNumberOfDays(Integer numberOfDays) {
 		this.numberOfDays = numberOfDays;
+	}
+	
+	public void resendBookingMail() {
+		BedPlace bed = null;
+		if (bedKey != null) {
+			bed = (BedPlace) PMF.get().getPersistenceManager().getObjectById(BedPlace.class, bedKey);
+		}
+		new BookBean2().sendMail(this, bed, true);
+
 	}
 }

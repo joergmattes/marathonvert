@@ -14,23 +14,23 @@
 
 		<div id="register" style="position:absolute; top: 50px;left:-5px">
 			<!-- <img src="/images/fleur1.jpg" style="position:absolute; top:-20px; left:-280px"/> -->
-			<img src="/images/icons/2012/fleur1.jpg" style="position:absolute; top:-20px; left:-280px;height:800px"/>
+			<img src="/images/paquerette.jpg" style="position:absolute; top:-50px; left:-280px;height:800px"/>
 			<ui:include src="/layout/links.xhtml"/>
 	
 	<div class="frametext" style="position:relative; top:10px; font-size:1em; width:820px">
 	
 	<p>
 A family home in the heart of "La Bresse" is the ideal setting for a tango weekend.
-The weekend will take place on the 27th, 28th and 29st of July plus one additional day, Monday 30th of july.
+The weekend will take place on the 26th, 27th, 28th and 29th of July.
 
 As most participants will be attending the marathon by invitation,
 we will only be able to offer a limited number of places for open registration.
-Early registration will therefore not guarantee you a place.
+<b>Early registration will therefore not guarantee you a place.</b>
 We apologise in advance for any disappointment this may cause.
 </p>
 <!-- Places are LIMITED and by INVITATION.
 Registering early will not necessarily guarantee your place. -->
-	<p>The price of the weekend is <b>95&#8364;</b> for 3 days and <b>130&#8364;</b> for 4 days. This includes the tango weekend itself, 2/3 breakfasts, 2/3 dinners (depending how long you stay), and snacks/drinks.
+	<p>The price of the weekend is 150&#8364; for 4 days. This includes the tango weekend itself, 3 breakfasts, 3 dinners, and snacks/drinks.
 	Everyone is welcome to bring something yummy to share, too!</p>
 
 	<p>After completing the registration process you will be able to book your accommodation.
@@ -38,14 +38,12 @@ Registering early will not necessarily guarantee your place. -->
 	you will be able to book your room through the marathon´s website.
 	If you prefer a hotel in Pont-de-Veyle or elsewhere, you will need to organise your own accommodation.</p>
 	
-	<p>If there are cancellations, we will contact those on the waiting list that can take over your payment.</p>
+	<p>There are no refunds. If you have to cancel, contact me before June 26th and I will choose the waiting list that can take over your payment. After June 26th this will not be possible anymore.</p>
 	
 		<h:messages errorStyle="color: red" />
 	<h:panelGrid columns="2" style="position:relative; left:-3px" cellpadding="0" cellspacing="0">
-		<h:outputText value="I want to stay 3/4 days "/>
+		<h:outputText value="I want to stay "/>
 		<h:selectOneMenu id="NumberOfDays" value="#{registrationBean.applicant.numberOfDays}" required="true" >
-			<f:selectItem itemLabel="Select..." itemValue=""/>
-			<f:selectItem itemLabel="3 days" itemValue="3"/>
 			<f:selectItem itemLabel="4 days" itemValue="4"/>
 		</h:selectOneMenu>
 
@@ -594,7 +592,7 @@ Registering early will not necessarily guarantee your place. -->
 		</h:panelGrid>
 	
 	<br/>
-	<h:commandButton action="#{registrationBean.send}" value="Send" style="width: 50px" disabled="false"/>(Registration will be enabled in March 2012)
+	<h:commandButton action="#{registrationBean.send}" value="Send" style="width: 50px" disabled="false"/>(Registration will be enabled in March 2013)
 
 	</div>
   </div>

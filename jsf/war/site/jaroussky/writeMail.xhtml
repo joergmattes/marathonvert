@@ -21,6 +21,10 @@
 				<h:inputTextarea value="#{allRegistrationsBean.newRegistrations}" rows="15" cols="100"/>
 				<h:outputText style="align: top" value="Mails of rejected registrations"/>
 				<h:inputTextarea value="#{allRegistrationsBean.rejectedRegistrations}" rows="15" cols="100"/>
+				<h:outputText style="align: top" value="Mails of NOTYET PAID"/>
+				<h:inputTextarea value="#{allRegistrationsBean.notYetPaidParticipants}" rows="15" cols="100"/>
+				<h:outputText style="align: top" value="Mails of not-yet-booked (but confirmation mail sent)"/>
+				<h:inputTextarea value="#{allRegistrationsBean.mailSentAndNotYetBookedParticipants}" rows="15" cols="100"/>
 			</h:panelGrid>
 			
 		</div>

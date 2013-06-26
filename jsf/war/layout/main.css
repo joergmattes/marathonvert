@@ -1,7 +1,7 @@
 body {
 	text-align:	center
 	;margin: auto
-	;background-color: HoneyDew ;
+	;background-color: #C0C6DC ;
 	;width: 1000px;
 	;height: 650px
 	;font-family: 'Courier New'
@@ -91,7 +91,6 @@ a:visited { text-decoration:none; color:blue}
 #program {
 	width: 900px;
 	height: 548px;
-	background-color: red !important;
 	background-image:url(/images/programme.jpg);
 }
 

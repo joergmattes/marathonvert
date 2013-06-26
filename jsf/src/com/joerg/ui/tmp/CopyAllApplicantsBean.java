@@ -60,55 +60,67 @@ public class CopyAllApplicantsBean extends BaseBean {
 	
 	public void createBeds() {
 		List<BedPlace> beds = new ArrayList<BedPlace>();
-		createBed(beds, "101a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'MM'", 2, true, 80, false);
-		createBed(beds, "101b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'MM'", 2, true, 80, false);
-		createBed(beds, "102a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Philippine'", 2, true, 80, false);
-		createBed(beds, "102b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Philippine'", 2, true, 80, false);		
-		createBed(beds, "103a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Jeremie'", 2, true, 80, false);
-		createBed(beds, "103b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Jeremie'", 2, true, 80, false);		
-		createBed(beds, "104a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Faustine'", 2, true, 80, false);
-		createBed(beds, "104b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Faustine'", 2, true, 80, false);
-		createBed(beds, "105a", BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, true, 70, false);
-		createBed(beds, "105b", BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, true, 70, false);
-		createBed(beds, "106",  BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, false, 70, false);
+//		createBed(beds, "101a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'MM'", 2, true, 80, false);
+//		createBed(beds, "101b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'MM'", 2, true, 80, false);
+//		createBed(beds, "102a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Philippine'", 2, true, 80, false);
+//		createBed(beds, "102b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Philippine'", 2, true, 80, false);		
+//		createBed(beds, "103a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Jeremie'", 2, true, 80, false);
+//		createBed(beds, "103b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Jeremie'", 2, true, 80, false);		
+//		createBed(beds, "104a", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Faustine'", 2, true, 80, false);
+//		createBed(beds, "104b", BedPlace.TYPE_PRIVATE, "Marathon House Room 'Faustine'", 2, true, 80, false);
 
-		createBed(beds, "107a", BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, true, 50, false);
-		createBed(beds, "107b", BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, true, 50, false);
-		createBed(beds, "108",  BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, false, 50, false);
+//		createBed(beds, "107a", BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, true, 80, false);
+//		createBed(beds, "107b", BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, true, 80, false);
+//		createBed(beds, "108",  BedPlace.TYPE_TIPI, "Marathon House Tipi (beds)", 3, false, 80, false);
 
-		createBed(beds, "109a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
-		createBed(beds, "109b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
-		createBed(beds, "110a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
-		createBed(beds, "110b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
-		createBed(beds, "111", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 50, false);
-		createBed(beds, "112", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 50, false);
+		createBed(beds, "201a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 65, false);
+		createBed(beds, "201b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 65, false);		
+		createBed(beds, "202a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 65, false);
+		createBed(beds, "202b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 65, false);		
+		createBed(beds, "207", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 65, false);
+		createBed(beds, "208", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 65, false);		
+		createBed(beds, "209", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 65, false);
+		createBed(beds, "210", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 65, false);
+		createBed(beds, "211", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 65, false);
 
-		createBed(beds, "113a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
-		createBed(beds, "113b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
-		createBed(beds, "114a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
-		createBed(beds, "114b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 50, false);
-		createBed(beds, "115", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 50, false);
-		createBed(beds, "116", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 50, false);
+		createBed(beds, "114", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
+		createBed(beds, "115", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
+		createBed(beds, "116", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
+		createBed(beds, "117", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
+		createBed(beds, "118", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
+		createBed(beds, "119", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
+		createBed(beds, "120", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
 
-		createBed(beds, "201a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
-		createBed(beds, "201b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);		
-		createBed(beds, "202a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
-		createBed(beds, "202b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);		
-		createBed(beds, "203a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
-		createBed(beds, "203b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);		
-		createBed(beds, "204a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
-		createBed(beds, "204b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);	
-		createBed(beds, "205a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
-		createBed(beds, "205b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);	
-		createBed(beds, "206a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
-		createBed(beds, "206b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);	
+		createBed(beds, "109a", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, true, 80, false);
+		createBed(beds, "109b", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, true, 80, false);
+		createBed(beds, "110a", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, true, 80, false);
+		createBed(beds, "110b", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, true, 80, false);
+		createBed(beds, "111", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, false, 80, false);
+		createBed(beds, "112", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, false, 80, false);
+		createBed(beds, "113", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, false, 80, false);
 
-		createBed(beds, "207", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
-		createBed(beds, "208", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);		
-		createBed(beds, "209", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
-		createBed(beds, "210", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
-		createBed(beds, "211", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
-		createBed(beds, "212", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, false, 60, false);
+
+		createBed(beds, "105a", BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, true, 80, false);
+		createBed(beds, "105b", BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, true, 80, false);
+		createBed(beds, "106",  BedPlace.TYPE_MANSARD, "Marathon House Mansard Room", 3, false, 80, false);
+
+
+
+//		createBed(beds, "203a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
+//		createBed(beds, "203b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);		
+//		createBed(beds, "204a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
+//		createBed(beds, "204b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);	
+//		createBed(beds, "205a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
+//		createBed(beds, "205b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);	
+//		createBed(beds, "206a", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);
+//		createBed(beds, "206b", BedPlace.TYPE_DORM_BED, "Marathon House Dormitory (beds)", 17, true, 60, false);	
+//		createBed(beds, "113a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 80, false);
+//		createBed(beds, "113b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 80, false);
+//		createBed(beds, "114a", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 80, false);
+//		createBed(beds, "114b", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, true, 80, false);
+//		createBed(beds, "115", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 80, false);
+//		createBed(beds, "116", BedPlace.TYPE_TENT, "Marathon House Tent (beds)", 6, false, 80, false);
+
 		
 //		createBed(beds, "301", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 14, false, 24, true);
 //		createBed(beds, "302", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 14, false, 24, true);		
@@ -131,41 +143,41 @@ public class CopyAllApplicantsBean extends BaseBean {
 //		createBed(beds, "319", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 14, false, 24, true);
 //		createBed(beds, "320", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 14, false, 24, true);		
 	
-		createBed(beds, "451a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, true, 45, false);
-		createBed(beds, "451b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, true, 45, false);
-		createBed(beds, "452a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, true, 45, false);
-		createBed(beds, "452b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, true, 45, false);
-		createBed(beds, "453", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, false, 45, false);
-		createBed(beds, "454a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, true, 45, false);
-		createBed(beds, "454b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, true, 45, false);
-		createBed(beds, "455a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, true, 45, false);
-		createBed(beds, "455b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, true, 45, false);
-		createBed(beds, "456", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, false, 45, false);
-		createBed(beds, "457a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, true, 45, false);
-		createBed(beds, "457b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, true, 45, false);
-		createBed(beds, "458a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, true, 45, false);
-		createBed(beds, "458b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, true, 45, false);
-		createBed(beds, "459", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, false, 45, false);
-		createBed(beds, "410a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, true, 45, false);
-		createBed(beds, "410b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, true, 45, false);
-		createBed(beds, "411a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, true, 45, false);
-		createBed(beds, "411b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, true, 45, false);
-		createBed(beds, "412", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, false, 45, false);
-		createBed(beds, "413a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, true, 45, false);
-		createBed(beds, "413b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, true, 45, false);
-		createBed(beds, "414a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, true, 45, false);
-		createBed(beds, "414b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, true, 45, false);
-		createBed(beds, "415", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, false, 45, false);
+		createBed(beds, "451a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, true, 80, false);
+		createBed(beds, "451b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, true, 80, false);
+		createBed(beds, "452a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, true, 80, false);
+		createBed(beds, "452b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, true, 80, false);
+		createBed(beds, "453", BedPlace.TYPE_HOTEL, "La Balmondiere Room 1", 5, false, 80, false);
+		createBed(beds, "454a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, true, 80, false);
+		createBed(beds, "454b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, true, 80, false);
+		createBed(beds, "455a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, true, 80, false);
+		createBed(beds, "455b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, true, 80, false);
+		createBed(beds, "456", BedPlace.TYPE_HOTEL, "La Balmondiere Room 2", 5, false, 80, false);
+		createBed(beds, "457a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, true, 80, false);
+		createBed(beds, "457b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, true, 80, false);
+		createBed(beds, "458a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, true, 80, false);
+		createBed(beds, "458b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, true, 80, false);
+		createBed(beds, "459", BedPlace.TYPE_HOTEL, "La Balmondiere Room 3", 5, false, 80, false);
+		createBed(beds, "410a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, true, 80, false);
+		createBed(beds, "410b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, true, 80, false);
+		createBed(beds, "411a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, true, 80, false);
+		createBed(beds, "411b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, true, 80, false);
+		createBed(beds, "412", BedPlace.TYPE_HOTEL, "La Balmondiere Room 4", 5, false, 80, false);
+		createBed(beds, "413a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, true, 80, false);
+		createBed(beds, "413b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, true, 80, false);
+		createBed(beds, "414a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, true, 80, false);
+		createBed(beds, "414b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, true, 80, false);
+		createBed(beds, "415", BedPlace.TYPE_HOTEL, "La Balmondiere Room 5", 5, false, 80, false);
 		
-		createBed(beds, "416a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 6", 5, true, 45, false);
-		createBed(beds, "416b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 6", 5, true, 45, false);
-		createBed(beds, "417", BedPlace.TYPE_HOTEL, "La Balmondiere Room 6", 5, false, 45, false);
+		createBed(beds, "416a", BedPlace.TYPE_HOTEL, "La Balmondiere Room 6", 5, true, 80, false);
+		createBed(beds, "416b", BedPlace.TYPE_HOTEL, "La Balmondiere Room 6", 5, true, 80, false);
+		createBed(beds, "417", BedPlace.TYPE_HOTEL, "La Balmondiere Room 6", 5, false, 80, false);
 		
-		createBed(beds, "418", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
-		createBed(beds, "419", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
-		createBed(beds, "420", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
-		createBed(beds, "421", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
-		createBed(beds, "422", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
+//		createBed(beds, "418", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
+//		createBed(beds, "419", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
+//		createBed(beds, "420", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
+//		createBed(beds, "421", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
+//		createBed(beds, "422", BedPlace.TYPE_HOTEL, "La Balmondiere Dormitory", 5, false, 35, false);
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		for (BedPlace bedPlace : beds) {

@@ -61,7 +61,10 @@
 					<h:commandButton value="Delete" action="#{par.delete}" style="width:90px"/>
 				</h:column>
 				<h:column>
-					<h:commandButton value="Cancel Booking" action="#{par.cancelBooking}" rendered="#{par.booked}" style="width:90px"/>
+					<h:commandButton value="Cancel Booking" action="#{par.cancelBooking}" rendered="#{par.booked}" style="width:110px"/>
+				</h:column>
+				<h:column>
+					<h:commandButton value="Resend Boo-Mail" action="#{par.resendBookingMail}" rendered="#{par.booked}" style="width:125px"/>
 				</h:column>
 			</h:dataTable>
 			Total = <h:outputText value="#{participantsBean.total}"/>

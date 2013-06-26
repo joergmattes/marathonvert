@@ -245,7 +245,7 @@ public class BookBean2 extends BaseBean {
 			if (part1.getNumberOfDays() == 3) {
 				part1.addAmountToPay(20L);
 			} else {
-				part1.addAmountToPay(30L);
+				part1.addAmountToPay(40L);
 			}
 		}
 		Participant part2 = null;
@@ -256,16 +256,16 @@ public class BookBean2 extends BaseBean {
 				if (part2.getNumberOfDays() == 3) {
 					part2.addAmountToPay(20L);
 				} else {
-					part2.addAmountToPay(30L);
+					part2.addAmountToPay(40L);
 				}
 			}
 			part2.setRoomType(roomType);
 		}
 		pm.close();
 
-		sendMail(part1, null);
+		sendMail(part1, null, false);
 		if (part2 != null) {
-			sendMail(part2, null);
+			sendMail(part2, null, false);
 		}
 		return "end";
 	}
@@ -335,19 +335,24 @@ public class BookBean2 extends BaseBean {
 		}
 		pm.close();
 
-		sendMail(part1, bed1);
+		sendMail(part1, bed1, false);
 		if (part2 != null) {
-			sendMail(part2, bed2);
+			sendMail(part2, bed2, false);
 		}
 		return "end";
 	}
-
-	public void sendMail(Participant part, BedPlace bed) {
+	
+	public void sendMail(Participant part, BedPlace bed, boolean resend) {
 		try {
 			String subject = "Tango Marathon Vert (" + part.getFullname()
 					+ ") --> you've booked your accommodation!";
 			StringBuffer body = new StringBuffer();
 			Util.appendLine(body, "Dear " + part.getFullname() + ",");
+			if (resend) {
+				Util.appendLine(
+						body,
+						"========\ndue to mail server problems, I have to resend your accommodation mail (please ignore in case you have already received this mail) / à cause de problèmes de serveur de mail, je dois renvoyer le mail concernant le hébergement (veuillez ignorer si vous l'avez déjà reçu).\n========\n\n");
+			}
 			Util.appendLine(
 					body,
 					"thanks for booking your accommodation. / Merci d'avoir réservé votre hébergement.");
@@ -400,15 +405,15 @@ public class BookBean2 extends BaseBean {
 			Util.appendLine(body, "");
 			Util.appendLine(body, getPaymentInformation(part));
 			Util.appendLine(body, "");
-			if (part.getNumberOfDays() == 3) {
-				Util.appendLine(
-					body,
-					"Included in the marathon price are 2 breakfasts, 2 dinners, as well as fruit and snacks. / Le prix du marathon inclue 2 petits déjeuners, 2 diners, ainsi que des fruits et boissons.");
-			} else {
+//			if (part.getNumberOfDays() == 3) {
+//				Util.appendLine(
+//					body,
+//					"Included in the marathon price are 2 breakfasts, 2 dinners, as well as fruit and snacks. / Le prix du marathon inclue 2 petits déjeuners, 2 diners, ainsi que des fruits et boissons.");
+//			} else {
 				Util.appendLine(
 					body,
 					"Included in the marathon price are 3 breakfasts, 3 dinners, as well as fruit and snacks. / Le prix du marathon inclue 3 petits déjeuners, 3 diners, ainsi que des fruits et boissons.");
-			}
+//			}
 			Util.appendLine(body,
 					"AUCUN REMBOURSEMENT NE SERA EFFECTUE EN CAS DE NON PRESENCE DE VOTRE PART.");
 			Util.appendLine(body, "Merci et a bientôt,");
@@ -428,7 +433,7 @@ public class BookBean2 extends BaseBean {
 		StringBuffer payment = new StringBuffer();
 		Util.appendLine(
 				payment,
-				"You have time until the 31th may 2012 to pay / Date limite acceptée du paiement le 31 mai 2012.");
+				"You have time until the 17th may 2013 to pay / Date limite acceptée du paiement le 17 mai 2013.");
 		Util.appendLine(
 				payment,
 				"Please put your name as payment reference (and your partner's name, if you pay together). / Merci d'indiquer votre nom sur la reference de paiement (ainsi que celui de votre partenaire si vous payez ensemble).");
