@@ -10,10 +10,17 @@ import com.joerg.service.MailService;
 import com.joerg.ui.util.MessageHelper;
 
 public class RegistrationBean {
+	
+	private String antiSpamAnswer;
 
 	private Registration applicant = new Registration();
 	
 	public String send() {
+		
+		if (!"FranciscoCanaro".equals(antiSpamAnswer)) {
+			MessageHelper.addErrorMessage("ATTENTION: Wrong Anti-Spam answer! You have NOT been registered. Try again.");
+			return null;
+		}
 		
         try {
         	String subject = "Registration Tango Marathon Vert (" + applicant.getFullname() + ")";

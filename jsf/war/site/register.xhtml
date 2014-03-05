@@ -14,14 +14,14 @@
 
 		<div id="register" style="position:absolute; top: 50px;left:-5px">
 			<!-- <img src="/images/fleur1.jpg" style="position:absolute; top:-20px; left:-280px"/> -->
-			<img src="/images/paquerette.jpg" style="position:absolute; top:-50px; left:-280px;height:800px"/>
+			<img src="/images/register.jpg" style="position:absolute; top:-50px; left:-350px;height:800px"/>
 			<ui:include src="/layout/links.xhtml"/>
 	
 	<div class="frametext" style="position:relative; top:10px; font-size:1em; width:820px">
 	
 	<p>
 A family home in the heart of "La Bresse" is the ideal setting for a tango weekend.
-The weekend will take place on the 26th, 27th, 28th and 29th of July.
+The weekend will take place on the 25th, 26th, 27th and 28th of July.
 
 As most participants will be attending the marathon by invitation,
 we will only be able to offer a limited number of places for open registration.
@@ -589,10 +589,20 @@ Registering early will not necessarily guarantee your place. -->
 			<h:outputText value=" (if registering as a couple)"/>
 		</h:panelGroup>
 
+		<h:outputText value="Anti-Spam Question: Which one is the leader of a tango orchestra?"/>
+		<h:selectOneMenu id="antiSpamField" value="#{registrationBean.antiSpamAnswer}" required="true" >
+			<f:selectItem itemLabel="Select..." itemValue=""/>
+			<f:selectItem itemLabel="The Beatles" itemValue="TheBeatles"/>
+			<f:selectItem itemLabel="Elton John" itemValue="EltonJohn"/>
+			<f:selectItem itemLabel="Spice Girls" itemValue="SpiceGirls"/>
+			<f:selectItem itemLabel="Francisco Canaro" itemValue="FranciscoCanaro"/>
+			<f:selectItem itemLabel="Milli Vanilli" itemValue="MilliVanilli"/>
+		</h:selectOneMenu>
+
 		</h:panelGrid>
 	
 	<br/>
-	<h:commandButton action="#{registrationBean.send}" value="Send" style="width: 50px" disabled="false"/>(Registration will be enabled in March 2013)
+	<h:commandButton action="#{registrationBean.send}" value="Send" style="width: 50px" disabled="true"/>(Registration will be enabled in March 2014)
 
 	</div>
   </div>
