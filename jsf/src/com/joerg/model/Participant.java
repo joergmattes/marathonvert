@@ -286,6 +286,8 @@ public class Participant implements Serializable {
 			Util.appendLine(body, "Dear " + getFullname() + ",");
 			Util.appendLine(body, "we have received your payment for the marathon vert!");
 			Util.appendLine(body, "");
+			Util.appendLine(body, "If you have any specific food intolerances, please let me know by mail.");
+			Util.appendLine(body, "");
 			Util.appendLine(body, "Merci et a bientôt,");
 			Util.appendLine(body, "Faustine.");
 			System.out.println(body.toString());

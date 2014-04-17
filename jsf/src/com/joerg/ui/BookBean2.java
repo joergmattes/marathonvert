@@ -433,7 +433,7 @@ public class BookBean2 extends BaseBean {
 		StringBuffer payment = new StringBuffer();
 		Util.appendLine(
 				payment,
-				"You have time until the 17th may 2013 to pay / Date limite acceptée du paiement le 17 mai 2013.");
+				"You have time until the 30th April 2014 to pay / Date limite acceptée du paiement le 30 Avril 2014.");
 		Util.appendLine(
 				payment,
 				"Please put your name as payment reference (and your partner's name, if you pay together). / Merci d'indiquer votre nom sur la reference de paiement (ainsi que celui de votre partenaire si vous payez ensemble).");
@@ -444,7 +444,7 @@ public class BookBean2 extends BaseBean {
 		Util.appendLine(payment, "IBAN: FR76 3000 3020 7000 0502 3336 126");
 		Util.appendLine(payment, "BIC: SOGEFRPP");
 		Util.appendLine(payment,
-				"Account Holder: Faustine Boyard (4 Rue Flachet, 69100 Villeurbanne)");
+				"Account Holder: Faustine Boyard (125 cours Tolstoï, 69100 Villeurbanne)");
 		return payment.toString();
 	}
 

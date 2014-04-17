@@ -74,4 +74,12 @@ public class RegistrationBean {
 	public void appendLine(StringBuffer buffer, String line) {
 		buffer.append(line + "\n");
 	}
+
+	public String getAntiSpamAnswer() {
+		return antiSpamAnswer;
+	}
+
+	public void setAntiSpamAnswer(String antiSpamAnswer) {
+		this.antiSpamAnswer = antiSpamAnswer;
+	}
 }

@@ -40,7 +40,7 @@ Registering early will not necessarily guarantee your place. -->
 	
 	<p>There are no refunds. If you have to cancel, contact me before June 26th and I will choose the waiting list that can take over your payment. After June 26th this will not be possible anymore.</p>
 	
-		<h:messages errorStyle="color: red" />
+		<h:messages style="color: red" />
 	<h:panelGrid columns="2" style="position:relative; left:-3px" cellpadding="0" cellspacing="0">
 		<h:outputText value="I want to stay "/>
 		<h:selectOneMenu id="NumberOfDays" value="#{registrationBean.applicant.numberOfDays}" required="true" >
@@ -588,8 +588,9 @@ Registering early will not necessarily guarantee your place. -->
 			<h:inputText value="#{registrationBean.applicant.partnerCity}"/>
 			<h:outputText value=" (if registering as a couple)"/>
 		</h:panelGroup>
-
-		<h:outputText value="Anti-Spam Question: Which one is the leader of a tango orchestra?"/>
+<br/>
+<br/>
+		Anti-Spam Question:<br/>Which one is the leader<br/>of a tango orchestra?
 		<h:selectOneMenu id="antiSpamField" value="#{registrationBean.antiSpamAnswer}" required="true" >
 			<f:selectItem itemLabel="Select..." itemValue=""/>
 			<f:selectItem itemLabel="The Beatles" itemValue="TheBeatles"/>
@@ -602,7 +603,7 @@ Registering early will not necessarily guarantee your place. -->
 		</h:panelGrid>
 	
 	<br/>
-	<h:commandButton action="#{registrationBean.send}" value="Send" style="width: 50px" disabled="true"/>(Registration will be enabled in March 2014)
+	<h:commandButton action="#{registrationBean.send}" value="Send" style="width: 50px" disabled="false"/>(Registration will be enabled in March 2014)
 
 	</div>
   </div>
