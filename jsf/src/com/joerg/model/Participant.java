@@ -80,7 +80,10 @@ public class Participant implements Serializable {
 
 	@Persistent
     private String comment;
-	
+
+	@Persistent
+    private String vegetarian;
+
 	@Persistent(mappedBy="participant")
 	private Key bedKey;
 
@@ -366,5 +369,13 @@ public class Participant implements Serializable {
 		}
 		new BookBean2().sendMail(this, bed, true);
 
+	}
+
+	public String getVegetarian() {
+		return vegetarian;
+	}
+
+	public void setVegetarian(String vegetarian) {
+		this.vegetarian = vegetarian;
 	}
 }

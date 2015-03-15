@@ -85,13 +85,14 @@ a:visited { text-decoration:none; color:blue}
 	width: 900px;
 	height: 548px;
 	background-image:url(/images/accueil.jpg);
-
+	background-repeat: no-repeat;
 }
 
 #program {
 	width: 900px;
 	height: 548px;
 	background-image:url(/images/programme.jpg);
+	background-repeat: no-repeat;
 }
 
 #place {

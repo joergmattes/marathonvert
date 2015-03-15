@@ -221,6 +221,12 @@ public class BookBean2 extends BaseBean {
 		selectBedPlaces();
 		return "step2";
 	}
+	
+	public String chooseDormitoryCarpetGround() {
+		roomType = BedPlace.TYPE_DORM_CARPET_GROUND;
+		selectBedPlaces();
+		return "step2";
+	}
 
 	public String chooseHotel() {
 		roomType = BedPlace.TYPE_HOTEL;

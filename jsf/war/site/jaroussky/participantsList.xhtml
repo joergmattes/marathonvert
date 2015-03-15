@@ -28,10 +28,6 @@
 					</h:outputLink>
 				</h:column>
 				<h:column>
-					<f:facet name="header">Days</f:facet>
-					<h:outputText value="#{par.numberOfDays}"/>
-				</h:column>
-				<h:column>
 					<f:facet name="header">Sex</f:facet>
 					<h:outputText value="#{par.sex}"/>
 				</h:column>
@@ -54,6 +50,10 @@
 				<h:column>
 					<f:facet name="header">Bed</f:facet>
 					<h:outputText value="#{par.bedKey.name}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Vegi</f:facet>
+					<h:outputText value="#{par.vegetarian}"/>
 				</h:column>
 			</h:dataTable>
 			Total participants = <h:outputText value="#{participantsBean.total}"/>

@@ -62,6 +62,12 @@ public class Registration {
 	
 	@Persistent
     private Date dateAccOrRej;
+	
+	@Persistent
+    private String vegetarian;
+	
+	@Persistent
+    private String partnerVegetarian;
 
 	public Date getDateAccOrRej() {
 		return dateAccOrRej;
@@ -164,10 +170,12 @@ public class Registration {
 		appendLine(b, "Sex", sex);
 		appendLine(b, "Nationality", country);
 		appendLine(b, "City", city);
+		appendLine(b, "Vegetarian", vegetarian);
 		appendLine(b, "Name of partner", partnerName);
 		appendLine(b, "Email of partner", partnerEmail);
 		appendLine(b, "City of partner", partnerCity);
-		appendLine(b, "Nationality of partner", partnerCountry);
+		appendLine(b, "Nationality of partner", partnerCountry == null ? "" : partnerCountry);
+		appendLine(b, "Partner Vegetarian", partnerVegetarian == null ? "" : partnerVegetarian);
 //		ToStringBuilder b = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
 		return b.toString();
 	}
@@ -226,6 +234,7 @@ public class Registration {
     		partner.setStateCd("NEW");
     		partner.setPartnerEmail(getEmail());
     		partner.setPartnerName(getFullname());
+    		partner.setVegetarian(getPartnerVegetarian());
 			if (partner.getNumberOfDays() == 3) {
 				partner.setAmountToPayEuro(Participant.DEFAULT_AMOUNT_3);
 			} else {
@@ -314,5 +323,21 @@ public class Registration {
 
 	public void setNumberOfDays(Integer numberOfDays) {
 		this.numberOfDays = numberOfDays;
+	}
+
+	public String getVegetarian() {
+		return vegetarian;
+	}
+
+	public void setVegetarian(String vegetarian) {
+		this.vegetarian = vegetarian;
+	}
+
+	public String getPartnerVegetarian() {
+		return partnerVegetarian;
+	}
+
+	public void setPartnerVegetarian(String partnerVegetarian) {
+		this.partnerVegetarian = partnerVegetarian;
 	}
 }

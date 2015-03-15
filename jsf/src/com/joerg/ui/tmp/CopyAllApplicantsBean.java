@@ -91,6 +91,13 @@ public class CopyAllApplicantsBean extends BaseBean {
 		createBed(beds, "119", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
 		createBed(beds, "120", BedPlace.TYPE_DORM_CARPET, "Marathon House Dormitory (carpet)", 7, false, 45, true);
 
+		createBed(beds, "121", BedPlace.TYPE_DORM_CARPET_GROUND, "Marathon House Dormitory (carpet, ground floor)", 6, false, 40, true);
+		createBed(beds, "122", BedPlace.TYPE_DORM_CARPET_GROUND, "Marathon House Dormitory (carpet, ground floor)", 6, false, 40, true);
+		createBed(beds, "123", BedPlace.TYPE_DORM_CARPET_GROUND, "Marathon House Dormitory (carpet, ground floor)", 6, false, 40, true);
+		createBed(beds, "124", BedPlace.TYPE_DORM_CARPET_GROUND, "Marathon House Dormitory (carpet, ground floor)", 6, false, 40, true);
+		createBed(beds, "125", BedPlace.TYPE_DORM_CARPET_GROUND, "Marathon House Dormitory (carpet, ground floor)", 6, false, 40, true);
+		createBed(beds, "126", BedPlace.TYPE_DORM_CARPET_GROUND, "Marathon House Dormitory (carpet, ground floor)", 6, false, 40, true);
+
 		createBed(beds, "109a", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, true, 80, false);
 		createBed(beds, "109b", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, true, 80, false);
 		createBed(beds, "110a", BedPlace.TYPE_TENT, "Marathon House Cottage (beds)", 6, true, 80, false);

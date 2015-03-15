@@ -21,7 +21,7 @@
 	
 	<p>
 A family home in the heart of "La Bresse" is the ideal setting for a tango weekend.
-The weekend will take place on the 25th, 26th, 27th and 28th of July.
+The weekend will take place on the 24th, 25th, 26th and 27th of July.
 
 As most participants will be attending the marathon by invitation,
 we will only be able to offer a limited number of places for open registration.
@@ -317,6 +317,13 @@ Registering early will not necessarily guarantee your place. -->
 		<h:outputText value="City"/>
 		<h:inputText id="City" value="#{registrationBean.applicant.city}" required="true"/>
 
+		<h:outputText value="Vegetarian"/>
+		<h:selectOneMenu id="Vegetarian" value="#{registrationBean.applicant.vegetarian}" required="true" >
+			<f:selectItem itemLabel="Select..." itemValue=""/>
+			<f:selectItem itemLabel="Yes" itemValue="Yes"/>
+			<f:selectItem itemLabel="No" itemValue="No"/>
+		</h:selectOneMenu>
+
 		<h:outputText value="Name of partner"/>
 		<h:panelGroup>
 			<h:inputText value="#{registrationBean.applicant.partnerName}"/>
@@ -588,7 +595,16 @@ Registering early will not necessarily guarantee your place. -->
 			<h:inputText value="#{registrationBean.applicant.partnerCity}"/>
 			<h:outputText value=" (if registering as a couple)"/>
 		</h:panelGroup>
-<br/>
+
+		<h:outputText value="Partner is vegetarian"/>
+		<h:panelGroup>
+		  <h:selectOneMenu id="PartnerVegetarian" value="#{registrationBean.applicant.partnerVegetarian}" >
+			<f:selectItem itemLabel="Select..." itemValue=""/>
+			<f:selectItem itemLabel="Yes" itemValue="Yes"/>
+			<f:selectItem itemLabel="No" itemValue="No"/>
+		  </h:selectOneMenu>
+	      <h:outputText value=" (if registering as a couple)"/>
+		</h:panelGroup>
 <br/>
 		Anti-Spam Question:<br/>Which one is the leader<br/>of a tango orchestra?
 		<h:selectOneMenu id="antiSpamField" value="#{registrationBean.antiSpamAnswer}" required="true" >
@@ -596,14 +612,20 @@ Registering early will not necessarily guarantee your place. -->
 			<f:selectItem itemLabel="The Beatles" itemValue="TheBeatles"/>
 			<f:selectItem itemLabel="Elton John" itemValue="EltonJohn"/>
 			<f:selectItem itemLabel="Spice Girls" itemValue="SpiceGirls"/>
-			<f:selectItem itemLabel="Francisco Canaro" itemValue="FranciscoCanaro"/>
 			<f:selectItem itemLabel="Milli Vanilli" itemValue="MilliVanilli"/>
+			<f:selectItem itemLabel="Cat Empire" itemValue="CatEmpire"/>
+			<f:selectItem itemLabel="Joe Cocker" itemValue="JoeCocker"/>
+			<f:selectItem itemLabel="Al Jarreau" itemValue="AlJarreau"/>
+			<f:selectItem itemLabel="Amy Winehouse" itemValue="AmyWinehouse"/>
+			<f:selectItem itemLabel="Francisco Canaro" itemValue="FranciscoCanaro"/>
+			<f:selectItem itemLabel="Jason Mraz" itemValue="JasonMraz"/>
+			<f:selectItem itemLabel="Hasmat Modine" itemValue="HasmatModine"/>
 		</h:selectOneMenu>
 
 		</h:panelGrid>
 	
 	<br/>
-	<h:commandButton action="#{registrationBean.send}" value="Send" style="width: 50px" disabled="false"/>(Registration will be enabled in March 2014)
+	<h:commandButton action="#{registrationBean.send}" value="Send" style="width: 50px" disabled="false"/>(Registration will be enabled in March 2015)
 
 	</div>
   </div>
