@@ -44,6 +44,10 @@ public class RegistrationBean {
         	appendLine(body, "---");
         	appendLine(body, "Your data as entered by yourself:");
         	appendLine(body, applicant.toString());
+        	appendLine(body, "_______________________");
+        	appendLine(body, "Athos Productions");
+        	appendLine(body, "9, rue Carnot 69500 BRON");
+        	
         	System.out.println(body.toString());
         	MailService.sendMail(applicant.getEmail(), applicant.getFullname(), subject, body.toString(), true);
 		} catch (Exception e) {

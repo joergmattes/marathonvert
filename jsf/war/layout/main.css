@@ -1,11 +1,12 @@
 body {
 	text-align:	center
 	;margin: auto
-	;background-color: #C0C6DC ;
+	;background-color: #5882A0 ;
 	;width: 1000px;
 	;height: 650px
 	;font-family: 'Courier New'
 	;font-size: 0.8em;
+	;color: white;
 }
 
 bodyLong {
@@ -22,8 +23,10 @@ input {font-family: 'Courier New'; width: 250px}
 select {font-family: 'Courier New'; width: 256px}
 .inputWide {font-family: 'Courier New'; width: 700px}
 
-a:link { text-decoration:none; color:blue}
-a:visited { text-decoration:none; color:blue}
+a:link { text-decoration:none; color:#FDFFB3}
+a:visited { text-decoration:none; color:#FDFFB3}
+
+p {color:#FDFFB3}
 
 /*
 .linkHomeT {filter:DropShadow(Color=black, OffX=1, OffY=1);text-shadow:black 1px 1px;opacity:0.30;filter:alpha(opacity=30);position:relative; top:42px; left:-215px; font-size: 1em; text-shadow:#505050 1px 1px;}
@@ -33,8 +36,8 @@ a:visited { text-decoration:none; color:blue}
 */
 
 .linkMenu {position:absolute; top:-50px;color:red; filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;text-shadow:#505050 1px 1px;}
-.linkMenu a:link 	{color:DarkMagenta}
-.linkMenu a:visited {color:DarkMagenta}
+.linkMenu a:link 	{color:#FDFFB3}
+.linkMenu a:visited {color:#FDFFB3}
 .linkMenu a:hover	{color:black}
 
 .linkHome {filter:DropShadow(Color=black, OffX=1, OffY=1); text-shadow:black 1px 1px;position:absolute; top:-50px; left:-110px; font-size: 0.6em; text-shadow:#505050 1px 1px;}
@@ -134,7 +137,7 @@ a:visited { text-decoration:none; color:blue}
 }
 
 .bold {
-	;color:#303030
+	;color:#FDFFB3
 }
 
 .topClass {

@@ -182,11 +182,11 @@ public class BookBean extends BaseBean {
 		Participant part1 = pm.getObjectById(Participant.class, part1Key);
 		Participant part2 = null;
 		part1.setRoomType(roomType);
-		part1.addAmountToPay(amountToAdd);
+		part1.setAmountToPayEuro(150L + amountToAdd);
 		if (part2Key != null) {
 			part2 = pm.getObjectById(Participant.class, part2Key);
 			part2.setRoomType(roomType);
-			part2.addAmountToPay(amountToAdd);
+			part2.setAmountToPayEuro(150L + amountToAdd);
 		}
 		pm.close();
 		
@@ -244,7 +244,7 @@ public class BookBean extends BaseBean {
 		bed1.setFree(false);
 		part1.setRoomType(roomType);
 		part1.setBedKey(bed1.getKey());
-		part1.addAmountToPay(bed1.getCostPerPerson());
+		part1.setAmountToPayEuro(150L + bed1.getCostPerPerson());
 		if (part2Key != null) {
 			part2 = pm.getObjectById(Participant.class, part2Key);
 			bed2 = pm.getObjectById(BedPlace.class, bed2.getKey());
@@ -252,7 +252,7 @@ public class BookBean extends BaseBean {
 			bed2.setFree(false);
 			part2.setRoomType(roomType);
 			part2.setBedKey(bed2.getKey());
-			part2.addAmountToPay(bed2.getCostPerPerson());
+			part2.setAmountToPayEuro(150L + bed2.getCostPerPerson());
 		}
 		pm.close();
 		

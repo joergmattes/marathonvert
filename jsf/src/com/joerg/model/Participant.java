@@ -246,6 +246,9 @@ public class Participant implements Serializable {
         	Util.appendLine(body, "");
         	Util.appendLine(body, "Merci et a bientôt,");
         	Util.appendLine(body, "Faustine.");
+			Util.appendLine(body, "_______________________");
+			Util.appendLine(body, "Athos Productions");
+			Util.appendLine(body, "9, rue Carnot 69500 BRON");
         	System.out.println(body.toString());
         	MailService.sendMail(getEmail(), getFullname(), subject, body.toString(), false);
 		} catch (Exception e) {
@@ -293,6 +296,9 @@ public class Participant implements Serializable {
 			Util.appendLine(body, "");
 			Util.appendLine(body, "Merci et a bientôt,");
 			Util.appendLine(body, "Faustine.");
+			Util.appendLine(body, "_______________________");
+			Util.appendLine(body, "Athos Productions");
+			Util.appendLine(body, "9, rue Carnot 69500 BRON");
 			System.out.println(body.toString());
 			MailService.sendMail(getEmail(), getFullname(), subject, body.toString(), false);
 		} catch (Exception e) {
@@ -377,5 +383,9 @@ public class Participant implements Serializable {
 
 	public void setVegetarian(String vegetarian) {
 		this.vegetarian = vegetarian;
+	}
+	
+	public String getId() {
+		 return StringUtils.left(StringUtils.right(getKey().toString(), 6), 5);
 	}
 }

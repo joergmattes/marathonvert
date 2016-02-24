@@ -249,9 +249,9 @@ public class BookBean2 extends BaseBean {
 		Participant part1 = pm.getObjectById(Participant.class, part1Key);
 		if (camping) {
 			if (part1.getNumberOfDays() == 3) {
-				part1.addAmountToPay(20L);
+				part1.setAmountToPayEuro(150L + 20L);
 			} else {
-				part1.addAmountToPay(40L);
+				part1.setAmountToPayEuro(150L + 40L);
 			}
 		}
 		Participant part2 = null;
@@ -260,9 +260,9 @@ public class BookBean2 extends BaseBean {
 			part2 = pm.getObjectById(Participant.class, part2Key);
 			if (camping) {
 				if (part2.getNumberOfDays() == 3) {
-					part2.addAmountToPay(20L);
+					part1.setAmountToPayEuro(150L + 20L);
 				} else {
-					part2.addAmountToPay(40L);
+					part1.setAmountToPayEuro(150L + 40L);
 				}
 			}
 			part2.setRoomType(roomType);
@@ -329,7 +329,7 @@ public class BookBean2 extends BaseBean {
 		bed1.setFree(false);
 		part1.setRoomType(roomType);
 		part1.setBedKey(bed1.getKey());
-		part1.addAmountToPay(bed1.getCostPerPerson());
+		part1.setAmountToPayEuro(150L + bed1.getCostPerPerson());
 		if (part2Key != null) {
 			part2 = pm.getObjectById(Participant.class, part2Key);
 			bed2 = pm.getObjectById(BedPlace.class, bed2.getKey());
@@ -337,7 +337,7 @@ public class BookBean2 extends BaseBean {
 			bed2.setFree(false);
 			part2.setRoomType(roomType);
 			part2.setBedKey(bed2.getKey());
-			part2.addAmountToPay(bed2.getCostPerPerson());
+			part2.setAmountToPayEuro(150L + bed2.getCostPerPerson());
 		}
 		pm.close();
 
@@ -374,8 +374,8 @@ public class BookBean2 extends BaseBean {
 						body,
 						"The price (marathon only, no accommodation) is "
 								+ euro
-								+ " EUR per person. / Le prix du marathon est de "
-								+ euro + " EUR par personne.");
+								+ " EUR TTC per person. / Le prix du marathon est de "
+								+ euro + " EUR TTC par personne.");
 			} else if (StringUtils.equals(BedPlace.TYPE_CAMPING,
 					part.getRoomType())) {
 				Util.appendLine(body, "");
@@ -383,8 +383,8 @@ public class BookBean2 extends BaseBean {
 						body,
 						"The price (marathon and camping) is "
 								+ euro
-								+ " EUR per person. / The prix (marathon et camping) est de "
-								+ euro + " EUR par personne.");
+								+ " EUR TTC per person. / The prix (marathon et camping) est de "
+								+ euro + " EUR TTC par personne.");
 				Util.appendLine(body,
 						"Don't forget to bring your tent etc. / N'oubliez pas tente, duvet...");
 			} else {
@@ -399,8 +399,8 @@ public class BookBean2 extends BaseBean {
 						body,
 						"The price (marathon and accommodation) is "
 								+ euro
-								+ " EUR per person. / Le prix (marathon et hébergement) est de "
-								+ euro + " euros par personne.");
+								+ " EUR TTC per person. / Le prix (marathon et hébergement) est de "
+								+ euro + " EUR TTC par personne.");
 				if (bed.isSleepingBag()) {
 					Util.appendLine(
 							body,
@@ -420,11 +420,14 @@ public class BookBean2 extends BaseBean {
 					body,
 					"Included in the marathon price are 3 breakfasts, 3 dinners, as well as fruit and snacks. / Le prix du marathon inclue 3 petits déjeuners, 3 diners, ainsi que des fruits et boissons.");
 //			}
-			Util.appendLine(body,
-					"AUCUN REMBOURSEMENT NE SERA EFFECTUE EN CAS DE NON PRESENCE DE VOTRE PART.");
+			Util.appendLine(body, "NO REFUND IS POSSIBLE IN CASE OF CANCELLATION FROM YOUR SIDE.");
+			Util.appendLine(body, "AUCUN REMBOURSEMENT NE SERA EFFECTUE EN CAS DE NON PRESENCE DE VOTRE PART.");
 			Util.appendLine(body, "Merci et a bientôt,");
 			Util.appendLine(body, "Faustine.");
-			System.out.println(body.toString());
+			Util.appendLine(body, "_______________________");
+			Util.appendLine(body, "Athos Productions");
+			Util.appendLine(body, "9, rue Carnot 69500 BRON");
+	        System.out.println(body.toString());
 			MailService.sendMail(part.getEmail(), part.getFullname(), subject,
 					body.toString(), true);
 		} catch (Exception e) {
@@ -439,18 +442,22 @@ public class BookBean2 extends BaseBean {
 		StringBuffer payment = new StringBuffer();
 		Util.appendLine(
 				payment,
-				"You have time until the 30th April 2014 to pay / Date limite acceptée du paiement le 30 Avril 2014.");
+				"You have time until the 30th April 2015 to pay / Date limite acceptée du paiement le 30 Avril 2015.");
 		Util.appendLine(
 				payment,
-				"Please put your name as payment reference (and your partner's name, if you pay together). / Merci d'indiquer votre nom sur la reference de paiement (ainsi que celui de votre partenaire si vous payez ensemble).");
+				"Please put your participant ID (MV15-" + StringUtils.left(StringUtils.right(part.getKey().toString(), 6), 5) + ") and name as payment reference (and your partner's participant ID and name, if you pay together). / Merci d'indiquer votre numéro de reference de paiement (ainsi que celui de votre partenaire si vous payez ensemble).");
 		Util.appendLine(payment, "");
-		Util.appendLine(payment, "French account / Compte français:");
-		Util.appendLine(payment,
-				"Bank: Société Générale (33 Av Foch, 69006 Lyon)");
-		Util.appendLine(payment, "IBAN: FR76 3000 3020 7000 0502 3336 126");
-		Util.appendLine(payment, "BIC: SOGEFRPP");
-		Util.appendLine(payment,
-				"Account Holder: Faustine Boyard (125 cours Tolstoï, 69100 Villeurbanne)");
+		Util.appendLine(payment, "Payment reference: MV15-" + StringUtils.left(StringUtils.right(part.getKey().toString(), 6), 5) + " / " + part.getFullname());
+		Util.appendLine(payment, "Bank: Crédit Mutuel (140 Av Franklin Roosevelt, 69500 Bron)");
+		Util.appendLine(payment, "IBAN: FR76 1027 8072 5900 0200 4550 119");
+		Util.appendLine(payment, "BIC: CMCIFR2A");
+		Util.appendLine(payment, "Account Owner: ATHOS PRODUCTIONS, 9 Rue Carnot, 69500 Bron");
+//		Util.appendLine(payment,
+//				"Bank: Société Générale (33 Av Foch, 69006 Lyon)");
+//		Util.appendLine(payment, "IBAN: FR76 3000 3020 7000 0502 3336 126");
+//		Util.appendLine(payment, "BIC: SOGEFRPP");
+//		Util.appendLine(payment,
+//				"Account Holder: Faustine Boyard (125 cours Tolstoï, 69100 Villeurbanne)");
 		return payment.toString();
 	}
 
