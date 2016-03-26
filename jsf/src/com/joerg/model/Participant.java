@@ -27,7 +27,7 @@ public class Participant implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	public static Long DEFAULT_AMOUNT_3 = 95l;
-	public static Long DEFAULT_AMOUNT_4 = 150l;
+	public static Long DEFAULT_AMOUNT_4 = 170l;
 	
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -236,19 +236,19 @@ public class Participant implements Serializable {
         	Util.appendLine(body, "");
         	Util.appendLine(body, "ENGLISH");
         	Util.appendLine(body, "To choose your accommodation, please use this link:");
-        	Util.appendLine(body, "http://marathonvert.appspot.com/site/book/start.jsf");
+        	Util.appendLine(body, "http://marathon-vert.appspot.com/site/book/start.jsf");
         	Util.appendLine(body, "If you wish to organize your accomodation yourself, please use the link in any case, and click 'I will organize my own accomodation'.");
         	Util.appendLine(body, "");
         	Util.appendLine(body, "FRANCAIS");
-        	Util.appendLine(body, "Pour choisir votre hébergement cliquez sur ce lien:");
-        	Util.appendLine(body, "http://marathonvert.appspot.com/site/book/start.jsf");
-        	Util.appendLine(body, "Si vous êtes en autonomie pour l’hébergement, merci d’utiliser ce lien pour nous en informer. Après quoi vous recevrez un mail avec le montant à régler.");
+        	Util.appendLine(body, "Pour choisir votre hÃ©bergement cliquez sur ce lien:");
+        	Util.appendLine(body, "http://marathon-vert.appspot.com/site/book/start.jsf");
+        	Util.appendLine(body, "Si vous Ãªtes en autonomie pour l'hÃ©bergement, merci d'utiliser ce lien pour nous en informer. AprÃ¨s quoi vous recevrez un mail avec le montant Ã  rÃ©gler.");
         	Util.appendLine(body, "");
-        	Util.appendLine(body, "Merci et a bientôt,");
+        	Util.appendLine(body, "Merci et a bientÃ´t,");
         	Util.appendLine(body, "Faustine.");
 			Util.appendLine(body, "_______________________");
 			Util.appendLine(body, "Athos Productions");
-			Util.appendLine(body, "9, rue Carnot 69500 BRON");
+			Util.appendLine(body, "67 bis rue de Marseille, 69007 Lyon");
         	System.out.println(body.toString());
         	MailService.sendMail(getEmail(), getFullname(), subject, body.toString(), false);
 		} catch (Exception e) {
@@ -294,11 +294,11 @@ public class Participant implements Serializable {
 			Util.appendLine(body, "");
 			Util.appendLine(body, "If you have any specific food intolerances, please let me know by mail.");
 			Util.appendLine(body, "");
-			Util.appendLine(body, "Merci et a bientôt,");
+			Util.appendLine(body, "Merci et a bientÃ´t,");
 			Util.appendLine(body, "Faustine.");
 			Util.appendLine(body, "_______________________");
 			Util.appendLine(body, "Athos Productions");
-			Util.appendLine(body, "9, rue Carnot 69500 BRON");
+			Util.appendLine(body, "67 bis rue de Marseille, 69007 Lyon");
 			System.out.println(body.toString());
 			MailService.sendMail(getEmail(), getFullname(), subject, body.toString(), false);
 		} catch (Exception e) {

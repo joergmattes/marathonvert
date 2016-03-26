@@ -31,14 +31,14 @@ public class RegistrationBean {
 //        	appendLine(body, "ENGLISH - ATTENTION: THE MARATHON IS ALREADY FULL. YOU WILL BE PUT ON THE WAITING LIST. SORRY!");
         	appendLine(body, "This email is to acknowledge receipt of your registration details. It is not a confirmation of your participation in the Marathon Vert. You will receive an email shortly to confirm your participation in the marathon.");
         	appendLine(body, "In the confirmation email, you will receive a link to the website, so you can book your accommodation.");
-        	appendLine(body, "Please note that accommodation at the country hotel \"La Balmondière\" must be booked through our website and not through the hotel itself.");
+        	appendLine(body, "Please note that accommodation at the country hotel \"La BalmondiÃ¨re\" must be booked through our website and not through the hotel itself.");
         	appendLine(body, "");
-//        	appendLine(body, "FRANCAIS - ATTENTION: LE MARATHON EST COMPLET. VOTRE DEMANDE SERA MISE SUR LISTE D'ATTENTE. MERCI DE VOTRE COMPRÉHENSION!");
-        	appendLine(body, "Cet Email vous informe que votre inscription a été prise en compte. Vous recevrez bientôt une confirmation de votre participation au marathon Vert.");
-        	appendLine(body, "Dans le mail de confirmation, un lien vous sera indiqué pour vous permettre de choisir votre hébergement.");
-        	appendLine(body, "Pour le gîte La Balmondière vous devez impérativement passer par le lien pour vous inscrire, aucune inscription ne sera pris en compte par le gîte.");
+//        	appendLine(body, "FRANCAIS - ATTENTION: LE MARATHON EST COMPLET. VOTRE DEMANDE SERA MISE SUR LISTE D'ATTENTE. MERCI DE VOTRE COMPRï¿½HENSION!");
+        	appendLine(body, "Cet Email vous informe que votre inscription a Ã©tÃ© prise en compte. Vous recevrez bientÃ´t une confirmation de votre participation au marathon Vert.");
+        	appendLine(body, "Dans le mail de confirmation, un lien vous sera indiquÃ© pour vous permettre de choisir votre hÃ©bergement.");
+        	appendLine(body, "Pour le gÃ®te La BalmondiÃ¨re vous devez impÃ©rativement passer par le lien pour vous inscrire, aucune inscription ne sera pris en compte par le gÃ®te.");
         	appendLine(body, "");
-        	appendLine(body, "Merci et a bientôt,");
+        	appendLine(body, "Merci et a bientÃ´t,");
         	appendLine(body, "Faustine.");
         	appendLine(body, "");
         	appendLine(body, "---");
@@ -46,7 +46,7 @@ public class RegistrationBean {
         	appendLine(body, applicant.toString());
         	appendLine(body, "_______________________");
         	appendLine(body, "Athos Productions");
-        	appendLine(body, "9, rue Carnot 69500 BRON");
+        	appendLine(body, "67 bis rue de Marseille, 69007 Lyon"); 
         	
         	System.out.println(body.toString());
         	MailService.sendMail(applicant.getEmail(), applicant.getFullname(), subject, body.toString(), true);

@@ -182,11 +182,11 @@ public class BookBean extends BaseBean {
 		Participant part1 = pm.getObjectById(Participant.class, part1Key);
 		Participant part2 = null;
 		part1.setRoomType(roomType);
-		part1.setAmountToPayEuro(150L + amountToAdd);
+		part1.setAmountToPayEuro(170L + amountToAdd);
 		if (part2Key != null) {
 			part2 = pm.getObjectById(Participant.class, part2Key);
 			part2.setRoomType(roomType);
-			part2.setAmountToPayEuro(150L + amountToAdd);
+			part2.setAmountToPayEuro(170L + amountToAdd);
 		}
 		pm.close();
 		
@@ -244,7 +244,7 @@ public class BookBean extends BaseBean {
 		bed1.setFree(false);
 		part1.setRoomType(roomType);
 		part1.setBedKey(bed1.getKey());
-		part1.setAmountToPayEuro(150L + bed1.getCostPerPerson());
+		part1.setAmountToPayEuro(170L + bed1.getCostPerPerson());
 		if (part2Key != null) {
 			part2 = pm.getObjectById(Participant.class, part2Key);
 			bed2 = pm.getObjectById(BedPlace.class, bed2.getKey());
@@ -252,7 +252,7 @@ public class BookBean extends BaseBean {
 			bed2.setFree(false);
 			part2.setRoomType(roomType);
 			part2.setBedKey(bed2.getKey());
-			part2.setAmountToPayEuro(150L + bed2.getCostPerPerson());
+			part2.setAmountToPayEuro(170L + bed2.getCostPerPerson());
 		}
 		pm.close();
 		
@@ -268,7 +268,7 @@ public class BookBean extends BaseBean {
         	String subject = "Tango Marathon Vert (" + part.getFullname() + ") --> you've booked your place to sleep!";
         	StringBuffer body = new StringBuffer();
         	Util.appendLine(body, "Hi " + part.getFullname() + ",");
-        	Util.appendLine(body, "thanks for booking your place to sleep. / Merci d'avoir réservé votre hébergement.");
+        	Util.appendLine(body, "thanks for booking your place to sleep. / Merci d'avoir rÃ©servÃ© votre hÃ©bergement.");
         	Util.appendLine(body, "");
         	Util.appendLine(body, "You chose the following: / Vous avez choisi:");
     		Util.appendLine(body, part.getRoomType());
@@ -287,7 +287,7 @@ public class BookBean extends BaseBean {
         		}
                	Util.appendLine(body, bedDetail);
             	Util.appendLine(body, "");
-        		Util.appendLine(body, "The price (marathon and place to sleep) is " + euro + " EUR per person. / Le prix (marathon et hébergement) est de " + euro + " euros par personne.");
+        		Util.appendLine(body, "The price (marathon and place to sleep) is " + euro + " EUR per person. / Le prix (marathon et hÃ©bergement) est de " + euro + " euros par personne.");
         		if (bed.isSleepingBag()) {
         			Util.appendLine(body, "Don't forget to bring your mat and sleeping bag. / N'oubliez pas votre matelas et votre duvet.");
         		}
@@ -296,9 +296,9 @@ public class BookBean extends BaseBean {
         	Util.appendLine(body, "");
         	Util.appendLine(body, getPaymentInformation(part));
         	Util.appendLine(body, "");
-        	Util.appendLine(body, "Included in the marathon price are two breakfasts, two dinners, as well as fruits, snacks and drinks and perhaps some wine. / Le prix du marathon inclue 2 petits déjeuners, deux diners, ainsi que des fruits, boissons et peut être du vin de la région.");
+        	Util.appendLine(body, "Included in the marathon price are two breakfasts, two dinners, as well as fruits, snacks and drinks and perhaps some wine. / Le prix du marathon inclue 2 petits dï¿½jeuners, deux diners, ainsi que des fruits, boissons et peut ï¿½tre du vin de la rï¿½gion.");
         	Util.appendLine(body, "");
-        	Util.appendLine(body, "Merci et a bientôt,");
+        	Util.appendLine(body, "Merci et a bientï¿½t,");
         	Util.appendLine(body, "Faustine.");
         	System.out.println(body.toString());
         	MailService.sendMail(part.getEmail(), part.getFullname(), subject, body.toString(), true);
@@ -311,16 +311,16 @@ public class BookBean extends BaseBean {
 	public String getPaymentInformation(Participant part) {
 		Long chf = part.getAmountToPayChf();
     	StringBuffer payment = new StringBuffer();
-		Util.appendLine(payment, "You have time until the 31th may 2010 to pay / Date limite acceptée du paiement le 31 mai 2010.");
+		Util.appendLine(payment, "You have time until the 31st may 2016 to pay / Date limite acceptÃ©e du paiement le 31 mai 2016.");
 		Util.appendLine(payment, "Please put your name as payment reference (and your partner's name, if you pay together). / Merci d'indiquer votre nom sur la reference de paiement (ainsi que celui de votre partenaire si vous payez ensemble).");
     	Util.appendLine(payment, "");
-		Util.appendLine(payment, "French account / Compte français");
-		Util.appendLine(payment, "Bank: Société Générale (33 Av Foch, 69006 Lyon)");
+		Util.appendLine(payment, "French account / Compte franÃ§ais");
+		Util.appendLine(payment, "Bank: Sociï¿½tï¿½ Gï¿½nï¿½rale (33 Av Foch, 69006 Lyon)");
 		Util.appendLine(payment, "IBAN: FR76 3000 3020 7000 0502 3336 126");
 		Util.appendLine(payment, "BIC: SOGEFRPP");
 		Util.appendLine(payment, "Account Holder: Faustine Boyard (4 Rue Flachet, 69100 Villeurbanne)");
     	Util.appendLine(payment, "");
-    	Util.appendLine(payment, "Alternatively, you can pay " + chf + " CHF to my swiss account / Vous pouvez également payer en francs suisse (" + chf + " CHF) sur mon compte suisse suivant:");
+    	Util.appendLine(payment, "Alternatively, you can pay " + chf + " CHF to my swiss account / Vous pouvez ï¿½galement payer en francs suisse (" + chf + " CHF) sur mon compte suisse suivant:");
 		Util.appendLine(payment, "Postkonto: 10-719586-4");
 		return payment.toString();
 	}
