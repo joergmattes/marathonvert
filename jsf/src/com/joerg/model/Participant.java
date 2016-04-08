@@ -235,13 +235,11 @@ public class Participant implements Serializable {
         	Util.appendLine(body, "YOU ARE IN!");
         	Util.appendLine(body, "");
         	Util.appendLine(body, "ENGLISH");
-        	Util.appendLine(body, "To choose your accommodation, please use this link:");
-        	Util.appendLine(body, "http://marathon-vert.appspot.com/site/book/start.jsf");
+        	Util.appendLine(body, "To choose your accommodation, please use <a href='http://marathon-vert.appspot.com/site/book/start.jsf'>this link</a>.");
         	Util.appendLine(body, "If you wish to organize your accomodation yourself, please use the link in any case, and click 'I will organize my own accomodation'.");
         	Util.appendLine(body, "");
         	Util.appendLine(body, "FRANCAIS");
-        	Util.appendLine(body, "Pour choisir votre hébergement cliquez sur ce lien:");
-        	Util.appendLine(body, "http://marathon-vert.appspot.com/site/book/start.jsf");
+        	Util.appendLine(body, "Pour choisir votre hébergement cliquez sur <a href='http://marathon-vert.appspot.com/site/book/start.jsf'>ce lien</a>.");
         	Util.appendLine(body, "Si vous êtes en autonomie pour l'hébergement, merci d'utiliser ce lien pour nous en informer. Après quoi vous recevrez un mail avec le montant à régler.");
         	Util.appendLine(body, "");
         	Util.appendLine(body, "Merci et a bientôt,");
