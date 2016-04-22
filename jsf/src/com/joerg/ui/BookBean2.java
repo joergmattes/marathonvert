@@ -260,9 +260,9 @@ public class BookBean2 extends BaseBean {
 			part2 = pm.getObjectById(Participant.class, part2Key);
 			if (camping) {
 				if (part2.getNumberOfDays() == 3) {
-					part1.setAmountToPayEuro(170L + 20L);
+					part2.setAmountToPayEuro(170L + 20L);
 				} else {
-					part1.setAmountToPayEuro(170L + 40L);
+					part2.setAmountToPayEuro(170L + 40L);
 				}
 			}
 			part2.setRoomType(roomType);
